@@ -1,0 +1,11 @@
+{% extends "content-base.html" %}
+{% load i18n easy_thumbnails_tags cms_tags %}
+
+{% block canonical_url %}<link rel="canonical" href="{{ meta.url }}"/>{% endblock canonical_url %}
+{% block title %}{{ post.get_title }}{% endblock %}
+
+{% block content_blog %}{% spaceless %}
+
+
+{% endspaceless %}
+{% endblock content_blog %}

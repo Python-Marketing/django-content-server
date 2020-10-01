@@ -1,0 +1,40 @@
+{% load cms_tags %}
+{% load djangocms_blog i18n easy_thumbnails_tags cms_tags site_server_tags %}
+{% with '/static/' as static_base %}
+
+{% if banner %}
+
+
+    {% if banner.main_image %}
+        {% thumbnail banner.main_image 800x600 as image %}
+        <section class="header-section-1 bg-image-1 header-js" id="header" style="background-image: url({{ image.url }});">
+    {% else %}
+        <section class="header-section-1 bg-image-1 header-js" id="header" style="background-image: url({{ static_base }}images/{% random_background %});">
+    {% endif %}
+
+        <div class="overlay-color">
+            <div class="container">
+                <div class="row section-separator">
+
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        <div class="part-inner text-center">
+                            <h1 class="title">{% render_model banner "title" "title" "" "safe" %}</h1>
+                            <div class="detail">
+                                <p>{% render_model banner "subtitle" "" "" "safe" %}</p>
+
+                            </div>
+                            {% ifequal banner.title post.title %}
+                            {% else %}
+                            <div class="btn-form">
+                                <a href="{{ banner.get_absolute_url }}" class="btn btn-fill right-icon">Read More <i class="icon icons8-advance"></i></a>
+                            </div>
+                            {% endifequal %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endif %}
+{% endwith %}

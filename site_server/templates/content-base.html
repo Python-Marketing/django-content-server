@@ -1,0 +1,61 @@
+{% load cms_tags sekizai_tags %}
+{% load i18n easy_thumbnails_tags cms_tags site_server_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        {% block title %}{{ page.title }}{% endblock title %}
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% addtoblock "css" %}
+      {% with '/static/' as css_base %}
+
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ css_base }}bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ css_base }}css/plagin-css/plagin.css">
+        <link rel="stylesheet" href="{{ css_base }}icons/toicons/css/styles.css">
+        <link rel="stylesheet" href="{{ css_base }}css/style.css">
+        <link rel="stylesheet" href="{{ css_base }}css/responsive.css">
+
+      {% endwith %}
+    {% endaddtoblock %}
+
+    {% render_block "css" %}
+  </head>
+  <body>
+    {% cms_toolbar %}
+
+
+    {% include 'includes/banner.html' with banner=post %}
+
+
+    {% render_model post "abstract" "" "" "safe" %}
+
+    <div class="btn-form">
+        <a href="/" class="btn btn-fill right-icon">Back <i class="icon icons8-retreat"></i></a>
+    </div>
+
+
+    {% static_placeholder 'Blog Content' %}
+
+
+    {% include 'includes/footer.html' %}
+
+  {% addtoblock "js" %}
+    {% with '/static/' as js_base %}
+      <script src="{{ js_base }}js/plagin-js/jquery-1.11.3.js"></script>
+      <script src="{{ js_base }}bootstrap/js/bootstrap.min.js"></script>
+      <script src="{{ js_base }}js/plagin-js/plagin.js"></script>
+
+      <script src="{{ js_base }}js/custom-scripts.js"></script>
+    {% endwith %}
+
+  {% include 'includes/custom_scripts.js' %}
+  {% endaddtoblock %}
+
+  {% render_block "js" %}
+  </body>
+</html>

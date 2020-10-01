@@ -1,0 +1,77 @@
+{% load cms_tags %}
+{% load djangocms_blog i18n easy_thumbnails_tags cms_tags site_server_tags %}
+{% with '/static/' as static_base %}
+
+
+<section class="features-section-8 relative background-light" id="work">
+	<div class="container">
+		<div class="row section-separator">
+
+
+			<div class="clearfix"></div>
+
+			<div class="project-item col-xs-12">
+
+				{% if services %}
+				{% for service in services %}
+				<div class="each-project row">
+					<div class="each-project-inner">
+
+						{% if forloop.counter|divisibleby:2 %}
+						<div class="vertical-middle col-md-7 col-sm-6 col-xs-12">
+							{% if service.main_image %}
+								{% thumbnail service.main_image 1024x768 as image %}
+								<div class="project-image cover" style="background-image: url({{ image.url }});">
+							{% else %}
+								<div class="project-image cover" style="background-image: url({{static_base}}images/{% random_background %});">
+							{% endif %}
+							</div>
+						</div>
+						{% else %}
+						{% endif %}
+
+						<div class="vertical-middle col-md-5 col-sm-6 col-xs-12">
+							<div class="inner p-l-50">
+
+								<h2 class="section-heading">{% render_model service "title" "" "" "" %}</h2>
+
+								<div class="detail">
+									<p>{% render_model service "subtitle" "" "" "" %}</p>
+								</div>
+
+								<!-- Button Area -->
+								<div class="btn-form">
+									<a href="{{ service.get_absolute_url }}" class="btn btn-fill right-icon">Read More <i class="icon icons8-advance"></i></a>
+								</div>
+
+							</div>
+						</div>
+
+						{% if forloop.counter|divisibleby:2 %}
+						{% else %}
+						<div class="vertical-middle col-md-7 col-sm-6 col-xs-12">
+							{% if service.main_image %}
+								{% thumbnail service.main_image 1024x768 as image %}
+								<div class="project-image cover" style="background-image: url({{ image.url }});">
+							{% else %}
+								<div class="project-image cover" style="background-image: url({{static_base}}images/{% random_background %});">
+							{% endif %}
+							</div>
+						</div>
+						{% endif %}
+
+
+
+					</div>
+				</div>
+			{% endfor %}
+			{% endif %}
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+{% endwith %}
