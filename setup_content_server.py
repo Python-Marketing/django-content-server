@@ -5,11 +5,8 @@ import os
 import shutil
 from datetime import datetime
 
-import django
-
 
 def setup_server():
-
     # Edit these details for you use cas
     superuser = 'developer'
     superuser_email = 'django.python.pro@gmail.com'
@@ -33,12 +30,16 @@ def setup_server():
     # This runs the custom script in site_server/management initialize_cms.py
     add_default_content = True
 
+    if install_requirements:
+        # Its a large application might take time
+        os.system("pip install -r requirements.txt")
+
+    # need ti install django before we can access it install requirements
+    import django
     # Initialise django
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "site_server.settings")
     django.setup()
     from django.conf import settings
-
-
 
     # timestamp used
     timestamp = str(datetime.now()).replace(" ", "")
@@ -57,10 +58,6 @@ def setup_server():
         os.system("rm *.db")
         # Force migrate
         migrate = True
-
-    if install_requirements:
-        # Its a large application might take time
-        os.system("pip install -r requirements.txt")
 
     if migrate:
         # Check API for makemigrations and migrate skips sometimes
@@ -82,8 +79,6 @@ def setup_server():
             os.system("rm *.back")
         # Make the backup
         shutil.copyfile(database, database + timestamp + '.back')
-
-
 
     # Need to see if at least one user is added
     from django.contrib.auth.models import User
