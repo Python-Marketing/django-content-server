@@ -530,10 +530,10 @@ l1.info("l1")
 l2.info("l2")
 root.info("root logger")
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = ''
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'django.python.pro@gmail.com'
-EMAIL_HOST_PASSWORD = '4ryleebeggs'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 
 BLOG_AUTO_HOME_TITLE = "Django CMS setup"
@@ -560,6 +560,8 @@ RATES_CACHE_TIMEOUT = 600
 
 # Note: the value None means "TAX not applicable" (supplier is not a VAT payer),
 # rather than value Decimal(0) which means 0% TAX.
+# under development
+
 from decimal import Decimal
 INVOICING_TAX_RATE = Decimal(20)
 
