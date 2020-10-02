@@ -1,5 +1,5 @@
 # Django Content Server
 
-[Home](README.md)
+[Home](../README.md)
 
 ##Tracker
