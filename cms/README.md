@@ -1,6 +1,6 @@
 # Django Content Server
 
-[Home](..)
+[Home](../)
 
 ## Django CMS
 
