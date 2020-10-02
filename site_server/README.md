@@ -1,6 +1,6 @@
 # Django Content Server
 
-[Home](../)
+[Home](https://github.com/Python-Marketing/django-content-server)
 
 ## Django Settings
 
