@@ -1,28 +1,12 @@
-from django.contrib.sites.models import Site
-from .settings import CMS_TEMPLATES
-from django.contrib.auth.models import User
+# Django Content Server
 
-# Default page settings Not used for installation
-# Content for adding a page
-# Still under development
-title = 'Django CMS setup'
-description = 'Open Source programming at its best'
+[Home](README.md)
 
-template = CMS_TEMPLATES[0][0]
-language = 'en'
-menu_title = title
-slug = title.lower().replace(" ", "-")
-meta_description = description
-created_by = User.objects.get(id=1).get_full_name()
-in_navigation = True
-published = True
-site = Site.objects.get(id=1)
+## Default Content : setup_content_server.py
 
+In default_site.py we store some data we can use during installation:
 
-xframe_options = 3
-page_title = title
-
-
+```
 # Content can be added here for initial setup
 blogs = {
     'Blog1': {
@@ -65,3 +49,85 @@ developer = {
     'first_name': 'Jody',
     'last_name': 'Beggs',
 }
+
+```
+
+This makes it easier to add the content we need for the site.
+
+TODO : Add All Auth applications to the script
+
+###Super User
+
+Superuser details, this is just for convenience, not secure to store password like this.
+
+```
+    # Edit these details for you use cas
+    superuser = 'developer'
+    superuser_email = 'django.python.pro@gmail.com'
+    superuser_password = 'password'
+```
+#####So remember to empty it.
+
+### Runserver
+
+Runserver just runs the application wait until installation is complete or use (ctrl - c) to cancel
+
+```
+    # Setup the django handling
+    # only use this if not using Pycharm or another way of running the server
+    runserver = False
+```
+
+###Database Updates and Migrations
+
+For a new installation must be set to true or if models are changed
+
+```
+    # Do you need to migrate the database? Safer to leave True
+    # if you have changed models it must be True
+    migrate = True
+```
+
+###Sqlight Database Backup
+
+This only works for sqlight databases in development
+
+```
+    # Do you need to backup the database? Safer to leave True (We are using sqlight)
+    backup = True
+    # How many as in how many copies since script is run.
+    no_backups = 1
+```
+
+# PIP requirements installation
+
+Install requirements in needed for new installations and updates to pip packages
+
+```
+    # Get pip involved?
+    install_requirements = True
+```
+
+## Reset
+
+Sometimes deleting everything and starting again is best. This creates a backup of the current db with the ext .reset
+
+```
+    # This deletes the database creating a reset copy on the last database
+    # Use wisely...
+    reset = True
+```
+
+###Initialise CMS
+
+Love django, now we can add default content.
+
+under `site_server/management/commands` in `initialize_cms.py`
+
+```
+    # This runs the custom script in site_server/management initialize_cms.py
+    add_default_content = True
+
+```
+
+Again this is for convenience. We can add default content and site settings during installation.

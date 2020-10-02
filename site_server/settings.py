@@ -363,8 +363,8 @@ SOCIALACCOUNT_PROVIDERS = {
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
         'APP': {
-            'client_id': '753212344350-r85sq11ndta64569mfcqud0bjlausfod.apps.googleusercontent.com',
-            'secret': 'ihT9cnfOcjy6pZO7x9pHxQ5v',
+            'client_id': '',
+            'secret': '',
             'key': ''
         }
     },
@@ -390,8 +390,8 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERIFIED_EMAIL': False,
         'VERSION': 'v2.5',
         'APP': {
-            'client_id': '599634194020698',
-            'secret': '9b5dd76e711d57a7e678d2ea41fdf2aa',
+            'client_id': '',
+            'secret': '',
             'key': ''
         }
     },
@@ -412,8 +412,8 @@ SOCIALACCOUNT_PROVIDERS = {
             'public-profile-url',
         ],
         'APP': {
-            'client_id': '77s2bdgrm419fn',
-            'secret': 'jVayHD6Ik2Chul75',
+            'client_id': '',
+            'secret': '',
             'key': ''
         }
     }
@@ -421,7 +421,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 LOGIN_REDIRECT_URL = "/?social_login=true"
 LOGOUT_REDIRECT_URL = "/"
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = '/accounts/social_login/'
 
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False  # a personal preference. True by default. I don't want users to be interrupted by logging in
 ACCOUNT_AUTHENTICATION_METHOD = 'email'  # a personal preference. I don't want to add 'i don't remember my username' like they did at Nintendo, it's stupid
