@@ -65,5 +65,41 @@
     </div>
 </section>
 
+{% if request.user.is_staff %}
+<section class=""  id="section-productibity">
+<div class="container">
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="white-grey">
+            <h3 class="box-title">Skills and resources </h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Story</th>
+                            <th>Done</th>
+                            <th>To Do</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
+                        {% render_productivity %}
+
+                        <!--<tr>-->
+                        <!--    <td>1</td>-->
+                        <!--    <td class="txt-oflo">Elite admin</td>-->
+                        <!--    <td>SALE</td>-->
+                        <!--    <td class="txt-oflo">April 18, 2017</td>-->
+                        <!--    <td><span class="text-success">$24</span></td>-->
+                        <!--</tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div></div>
+</section>
+{% endif %}
 {% endwith %}

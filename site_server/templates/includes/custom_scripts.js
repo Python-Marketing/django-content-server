@@ -1,6 +1,28 @@
 <script>
 
+function add_task(id) {
+
+    var name = $('.name');
+    name.val("");
+    var email = $('.email');
+    email.val("task@site.com");
+    email.hide();
+    var phone = $('.phone');
+    phone.val("Task");
+    phone.hide();
+    var subject = $('.subject');
+    subject.val("Task Added");
+    subject.hide();
+    var message = $('.message');
+    message.val(id+"=id : ");
+    $('html, body').animate({
+            scrollTop: $("#contact").offset().top
+    }, 500);
+}
+
+
 (function($) {
+
 
   'use strict';
 
@@ -48,11 +70,12 @@
             loader.fadeOut(1000);
             success.delay(500).fadeIn(1000);
             failed.fadeOut(500);
-            $(this).find('.name').val(''),
-            $(this).find('.email').val(''),
-            $(this).find('.subject').val(''),
-            $(this).find('.phone').val(''),
-            $(this).find('#message').val('')
+            $('.name').val(''),
+            $('.email').val(''),
+            $('.subject').val(''),
+            $('.phone').val(''),
+            $('#message').val('')
+            window.location = '/';
           },
           error: function(xhr) { // if error occured
             loader.fadeOut(1000);

@@ -17,7 +17,7 @@ from allauth.utils import get_request_param, get_form_class
 from cms.models import Page, reverse
 from djangocms_blog.models import Post
 from invoicing.models import Invoice
-from tracker.models import Story, Developer
+from tracker.models import Story, Developer, Task
 from .models import Post as ApiPost, Donation, Volunteer
 from .serializer import UserSerializer, PageSerializer, PostSerializer
 
@@ -108,11 +108,28 @@ class ContactAjax(View):
         name = self.request.GET.get('name')
         subject = self.request.GET.get('subject')
         email = self.request.GET.get('email')
-        phone = self.request.GET.get('subject')
+        phone = self.request.GET.get('phone')
         message = self.request.GET.get('message')
         new_story = Story()
 
-        if name and email and message:
+        if phone == "Task":
+
+            task = Task()
+            task.name = name
+            task.description = message.split("=id")[1]
+            task.estimate = 1
+            task.iteration = 1
+            task.completed = False
+
+            task.developer = Developer.objects.get(id=1)
+            try:
+                task.parent_story = Story.objects.get(id=message.split("=id")[0])
+                task.save()
+                response = 'Updated ' + name + ' to tasks!'
+            except:
+                response = 'error...{}'.format(task)
+
+        elif name and email and message:
 
             new_story.name = "{}".format(name)
             new_story.description = "{}\n".format(subject)
