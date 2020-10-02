@@ -4,7 +4,7 @@
 
 This assumes ubuntu server or desktop.
 
-###Basic understanding needed to get site server running
+### Basic understanding needed to get site server running
 
 * Virtual env
 * Ubuntu desktop or server
@@ -15,9 +15,9 @@ This assumes ubuntu server or desktop.
 Installation
 -------------
 
-####Need some structure in place.
+#### Need some structure in place.
 
-####For logging : 
+#### For logging : 
 
 `$ mkdir /var/log/DEVELOPMENT`
 
@@ -56,7 +56,7 @@ To activate the virtual env
 
 Run the script :
 
-`python3 setup_content_server.py`
+`python3 installation/setup_content_server.py`
 
 #### You will run this script repeatedly until installation process is complete.
 
