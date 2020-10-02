@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import Sum
-
+from django.conf import settings
 
 class Developer(models.Model):
     first_name = models.CharField(max_length=30)
@@ -33,6 +33,8 @@ class Developer(models.Model):
 class Story(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField(max_length=500, blank=True)
+    url = models.URLField(max_length=200, blank=True)
+    image = models.CharField(max_length=50, blank=True)
     estimate = models.IntegerField()
     completed = models.BooleanField(default=False)
     creation_date = models.DateTimeField(auto_now_add=True)
@@ -41,7 +43,20 @@ class Story(models.Model):
         return self.name
 
     def get_tasks(self):
-        return list(self.task_set.all())
+        tasks = Task.objects.filter(parent_story__id=self.id)
+        return tasks
+
+    def get_tasks_total(self):
+        tasks = Task.objects.filter(parent_story__id=self.id)
+        return tasks.count()
+
+    def get_completed_tasks(self):
+        tasks = Task.objects.filter(parent_story__id=self.id, completed=True)
+        return tasks.count()
+
+    def get_todo_tasks(self):
+        tasks = Task.objects.filter(parent_story__id=self.id, completed=False)
+        return tasks.count()
 
     def get_tasks_est_time(self):
         d = Task.objects.filter(parent_story__id=self.id).aggregate(
@@ -69,6 +84,8 @@ class Task(models.Model):
     completed = models.BooleanField(default=False)
     developer = models.ForeignKey(Developer, on_delete=models.CASCADE)
     parent_story = models.ForeignKey(Story, on_delete=models.CASCADE)
+    upload_dir = settings.MEDIA_ROOT[1:] + "/audo"
+    audio_file = models.FileField(upload_to=upload_dir, blank=True)
 
     def __str__(self):
         return self.name

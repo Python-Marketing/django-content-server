@@ -4,6 +4,7 @@ from django.utils.html import format_html
 from api.models import Donation, Testimonial, Video
 from djangocms_blog.models import Post
 from cms.models import Page, ImproperlyConfigured, reverse, get_language, os, Q, PageUser
+from tracker.models import Story
 
 register = template.Library()
 
@@ -80,5 +81,28 @@ def render_navigation(page_list={}, list=''):
         html += '<li class="nav-item">'
         html += link
         html += '</li>'
+
+    return format_html(html)
+
+@register.simple_tag
+def render_productivity():
+
+    est = 0
+    html = ""
+    for story in Story.objects.all():
+        html += "<tr>"
+        html += "<td>{}</td>".format(story.id)
+        html += "<td>{}</td>".format(story)
+        completed = story.get_completed_tasks()
+        style = 'text-success'
+        if int(completed) == 0:
+            style = 'text-danger'
+        html += "<td class='{}'>{}</td>".format(style,completed)
+        todo = story.get_todo_tasks()
+        if int(todo) == 0:
+            todo = ''
+        html += "<td class='text-danger'>{}</td>".format(todo)
+        html += "<td class=''><button onclick='add_task({})' class='btn btn-success'>Task</button></td>".format(story.id)
+        html += "</tr>"
 
     return format_html(html)
