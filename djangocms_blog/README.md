@@ -2,7 +2,7 @@
 
 [Home](../README.md)
 
-##Django Blog
+## Django Blog
 
 
 

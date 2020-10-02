@@ -2,13 +2,13 @@
 
 [Home](../README.md)
 
-##Django CMS
+## Django CMS
 
 First things first: djangoCMS is powered by Django. This means all the great advantages of it will be present on django-CMS.
 
 It is backed by Divio, a Django-pioneer company — and our official partner. Divio offers world-class development tools for agencies and organizations.
 
-###Admin UI
+### Admin UI
 
 One of the strong points of djangoCMS is its user interface. The admin UI is and cleaner and better structured than the official Django admin site.
 

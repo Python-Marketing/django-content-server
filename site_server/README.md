@@ -4,15 +4,15 @@
 
 ## Django Settings
 
-###Why Django
+### Why Django
 Django is the most popular framework in Python for building web applications. It uses the Model View Template (MVT) pattern, which is a slightly modified version of the Model View Controller (MVC) pattern, in which the View works more like the Controller, and the Template acts as the View. Such a solution offers a flexible way of separating context and business logic - each layer has its own responsibilities.
 
 Django helps developers by speeding up the development process. It includes its own Object Relation Mapping (ORM) layer for handling database access, sessions, routing, and multi-language support. It also takes care of security while handling requests. It includes an admin panel (called django-admin) for managing models data by default.
 
-###Who's using it
+### Who's using it
 It’s valued equally among startups, blue chip companies like Google, Quora, Netflix, and Spotify, and government organizations like NASA. Yet few people know why Python is one of the top programming languages for website development.
 
-###Backbone
+### Backbone
 Python offers many features by default, with standard libraries that cover almost any programming task. From scientific calculations to image processing, operating system interfaces, and protocols, Python saves developers’ time and effort by presenting them with solutions they would otherwise have to build manually.
 
 
@@ -61,7 +61,7 @@ SITE_URL = 'http://127.0.0.1'
 
 Multiple sites can be created in the admin section.
 
-####Databases
+#### Databases
 
 Database details. We only use sqlight but any database can be used!
 

@@ -56,7 +56,7 @@ This makes it easier to add the content we need for the site.
 
 TODO : Add All Auth applications to the script
 
-###Super User
+### Super User
 
 Superuser details, this is just for convenience, not secure to store password like this.
 
@@ -66,7 +66,7 @@ Superuser details, this is just for convenience, not secure to store password li
     superuser_email = 'django.python.pro@gmail.com'
     superuser_password = 'password'
 ```
-#####So remember to empty it.
+##### So remember to empty it.
 
 ### Runserver
 
@@ -78,7 +78,7 @@ Runserver just runs the application wait until installation is complete or use (
     runserver = False
 ```
 
-###Database Updates and Migrations
+### Database Updates and Migrations
 
 For a new installation must be set to true or if models are changed
 
@@ -88,7 +88,7 @@ For a new installation must be set to true or if models are changed
     migrate = True
 ```
 
-###Sqlight Database Backup
+### Sqlight Database Backup
 
 This only works for sqlight databases in development
 
@@ -99,7 +99,7 @@ This only works for sqlight databases in development
     no_backups = 1
 ```
 
-# PIP requirements installation
+## PIP requirements installation
 
 Install requirements in needed for new installations and updates to pip packages
 
