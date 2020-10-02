@@ -263,4 +263,32 @@ class SocialLoginView(RedirectAuthenticatedUserMixin,
         return ret
 
 
+class RecordAudioAjax(View):
+    def get(self, *args, **kwargs):
+        response = "No entry"
+        return HttpResponse(format_html(response), content_type='text/html', status=200)
+
+    def post(self, *args, **kwargs):
+        response = "No entry"
+
+        audio_file = self.request.FILES['audio_data']
+        reason = self.request.POST.get('reason')
+        try:
+            reason = int(reason)
+        except:
+            reason = 1
+        task = Task()
+        task.name = "Voice message"
+        task.description = 'Voice message'
+        task.estimate = 1
+        task.iteration = 1
+        task.completed = False
+        task.audio_file = audio_file
+        task.developer = Developer.objects.get(id=1)
+
+        task.parent_story = Story.objects.get(id=reason)
+        task.save()
+        return HttpResponse(format_html(response), content_type='text/html', status=200)
+
+
 social_login = SocialLoginView.as_view()

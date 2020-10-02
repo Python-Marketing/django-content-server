@@ -57,3 +57,8 @@ image_sizes = {
         'height': '768',
     }
 }
+
+developer = {
+    'first_name': 'Jody',
+    'last_name': 'Beggs',
+}

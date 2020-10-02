@@ -5,12 +5,16 @@ from api.models import *
 from cms.api import create_page
 from djangocms_blog.cms_appconfig import BlogConfig
 from djangocms_blog.models import Post as BlogPost
-from site_server.default_site import blogs, image_sizes
+from site_server.default_site import blogs, image_sizes, developer
 from filer.models import ThumbnailOption
 
 from django.conf import settings
 
+
 # This will create a page with the settings in default_site.py
+from tracker.models import Developer, Story, Task
+
+
 def create_new_page(self):
     self.stdout.write("Creating Page")
     from site_server.default_site import (
@@ -69,4 +73,26 @@ class Command(BaseCommand):
         site.name = site_name
         site.domain = site_domain
         site.save()
+        self.stdout.write("Setting up first Story")
+        new_story = Story()
+        new_story.name = "My First Story"
+        new_story.description = "Learn about this site\n"
+        new_story.description += "Get customer to use form"
+        new_story.estimate = 1
+        new_story.save()
+        self.stdout.write("Setting up Story developer")
+        delevoper = Developer()
+        delevoper.first_name = developer['first_name']
+        delevoper.last_name = developer['last_name']
+        delevoper.save()
+        self.stdout.write("Setting up Story Task")
+        task = Task()
+        task.name = 'First task for Story'
+        task.description = "Own the website and content"
+        task.estimate = 1
+        task.iteration = 1
+        task.completed = False
+        task.developer = Developer.objects.get(id=1)
+        task.parent_story = Story.objects.get(id=1)
+        task.save()
         self.stdout.write("Site ready")
