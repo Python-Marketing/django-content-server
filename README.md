@@ -2,14 +2,15 @@
 
 So you have it running what now?
 
-package includes
+* [Django CMS]() - [Documentation](https://readthedocs.org/projects/django-cms/)
+* Django Blog - [Documentation](https://djangocms-blog.readthedocs.io/en/latest/)
+* Django All Auth - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
+* Built in restAPI - [Documentation](https://www.django-rest-framework.org/)
+* Secure - [Read More](https://docs.djangoproject.com/en/3.1/topics/security/)
+* Story, Task and Time tracker - [Code Base](https://pypi.org/project/django-tasktracker/)
+* Invoicing on Time tracker - (in development) - [Code Base](https://pypi.org/project/django-invoicing/)
 
-* All Auth
-* Django CMS
-* Django Blog
-* Bootstrap
-* Custom API
-* Point and click edit...
+
 
 http://127.0.0.1:8000/
 
