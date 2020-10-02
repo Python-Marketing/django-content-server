@@ -2,7 +2,7 @@ from cms.extensions import PageExtensionAdmin
 from django.contrib import admin
 
 from .models import PageDetailExtension, Post, Donation, Volunteer, Testimonial, Video
-
+from tracker.models import Story, Task, Developer, SpentTime
 
 class PageDetailExtensionAdmin(PageExtensionAdmin):
     pass
@@ -28,9 +28,25 @@ class VideoAdmin(admin.ModelAdmin):
     pass
 
 
+class StoryAdmin(admin.ModelAdmin):
+    pass
+
+class TaskAdmin(admin.ModelAdmin):
+    pass
+
+class DeveloperAdmin(admin.ModelAdmin):
+    pass
+
+class SpentTimeAdmin(admin.ModelAdmin):
+    pass
+
 admin.site.register(PageDetailExtension, PageDetailExtensionAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Testimonial, TestimonialAdmin)
 admin.site.register(Volunteer, VolunteerAdmin)
 admin.site.register(Donation, DonationAdmin)
 admin.site.register(Post, PostAdmin)
+admin.site.register(Story, StoryAdmin)
+admin.site.register(Task, TaskAdmin)
+admin.site.register(Developer, DeveloperAdmin)
+admin.site.register(SpentTime, SpentTimeAdmin)

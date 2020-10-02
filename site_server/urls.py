@@ -11,7 +11,7 @@ from django.views.static import serve
 
 from allauth import urls as socialmarket
 from api.urls import router
-from api.views import SocialLoginView, DonateView, VolunteerAjax
+from api.views import SocialLoginView, DonateView, VolunteerAjax, ContactAjax
 from cms.sitemaps import CMSSitemap
 
 '''
@@ -30,6 +30,7 @@ urlpatterns += [
        # Seperate API for our content and auth
        url(r'^api/donate/', DonateView.as_view()),
        url(r'^api/volunteer/', VolunteerAjax.as_view()),
+       url(r'^api/contact/', ContactAjax.as_view()),
        url(r'^api/', include(router.urls)),
        url(r'^api-auth/', include('rest_framework.urls')),
        # Django admin and favicons

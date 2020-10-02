@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+              {% with '/static/' as css_base %}
+
+                <link rel="stylesheet" href="{{ css_base }}bootstrap/css/bootstrap.min.css">
+                <link rel="stylesheet" href="{{ css_base }}css/plagin-css/plagin.css">
+                <link rel="stylesheet" href="{{ css_base }}icons/toicons/css/styles.css">
+                <link rel="stylesheet" href="{{ css_base }}css/style.css">
+                <link rel="stylesheet" href="{{ css_base }}css/responsive.css">
+                <link rel="stylesheet" href="{{ css_base }}/bootstrap/css/bootstrap.min.css">
+                <link rel="stylesheet" href="{{ css_base }}css/tracker.css' %}">
+              {% endwith %}
+
+        {% endblock head %}
+    </head>
+
+    <body>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+
+                {% if request.user.is_staff %}
+
+                    {% block body %}
+
+                        <h1>{{ title }}</h1>
+                        <div class="list-group">
+                        {% for link in navigation %}
+                            <li class="list-group-item"><a href="{% url link %}" class="list-group-item list-group-item-success">{{ link }}</a></li>
+                        {% endfor %}
+                        </div>
+
+                    {% endblock body %}
+
+                    {% block tail %}
+                    {% endblock tail %}
+
+                    {% if title != 'Navigation' %}
+                        <a href="{% url 'index' %}" class="list-group-item list-group-item-dark">Back to index</a>
+                    {% endif %}
+                {% else %}
+                    <script>
+                        window.location = '/';
+                    </script>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+    </body>
+
+</html>

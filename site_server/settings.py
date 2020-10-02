@@ -200,7 +200,8 @@ INSTALLED_APPS = [
     'favicon',
     # Start of invoicing module
     'invoicing',
-    'tracker'
+    'tracker',
+    'widget_tweaks'
 
 ]
 
