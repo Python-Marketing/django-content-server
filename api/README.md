@@ -1,5 +1,5 @@
 # Django Content Server
 
-[Home](..)
+[Home](../)
 
 ##Django Rest API
