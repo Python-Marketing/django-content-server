@@ -23,7 +23,7 @@ Give access to the logging :
 
 `$ chown -r username:username /var/log/DEVELOPMENT`
 
-####Git directory parent
+#### Git directory parent
 
 `$ mkdir /development`
 
@@ -31,13 +31,13 @@ Give access to the logging :
 
 `$ cd /development`
 
-####Git Clone the repository
+#### Git Clone the repository
 
 `$ git clone https://github.com/Python-Marketing/django-content-server.git`
 
 `$ cd /development/django-content-server`
 
-####Setup virtualenv:
+#### Setup virtualenv:
 
 Run this command to create a virtualenv, change the path to anything but /var/tmp
 
@@ -50,21 +50,21 @@ Then we run the following code, in a terminal in the directory `/development/dja
 To activate the virtual env
 
 
-###OK hard work is done. Lets start installing and migrating the app.
+### OK hard work is done. Lets start installing and migrating the app.
 
 Run the script :
 
 `python3 setup_content_server.py`
 
-####You will run this script repeatedly until installation process is complete.
+#### You will run this script repeatedly until installation process is complete.
 
 Errors will hint at you what ubuntu packages are needed. 
 
-###Usually copy the error and google it. 
+### Usually copy the error and google it. 
 
 
 Read through the script its self explanatory. You can adapt it to so almost anything.
 
-###NB - leave runserver off until installation process is complete.
+### NB - leave runserver off until installation process is complete.
 
 

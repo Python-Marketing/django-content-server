@@ -4,7 +4,7 @@
 
 ## Django All Auth
 
-###NB Only work on All Auth when you have a url to work with.
+### NB Only work on All Auth when you have a url to work with.
 
 Otherwise you end up creating two applications for everything...
 
@@ -78,7 +78,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 To enable social login we need to add the client_id and secret for the providers in the settings.py file.
 
-###Then under the admin section for Social Account
+### Then under the admin section for Social Account
 
 `/admin/socialaccount/socialapp/`
  
