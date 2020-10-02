@@ -25,9 +25,9 @@ Give access to the logging :
 
 ####Git directory parent
 
-`$ chown -r username:username /development`
-
 `$ mkdir /development`
+
+`$ chown -r username:username /development`
 
 `$ cd /development`
 
