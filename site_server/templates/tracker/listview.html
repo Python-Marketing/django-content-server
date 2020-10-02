@@ -1,0 +1,30 @@
+{% extends "tracker/base.html" %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+    <table class="table table-striped">
+        <tr>
+        {% for col in field_names %}
+            <th scope="col">{{ col }}</th>
+        {% endfor %}
+        </tr>
+        {% if not data_list %}
+        <h1>No data found.</h1>
+        {% else %}
+            {% for row in data_list %}
+                <tr>
+                {% for col, link in row %}
+                    {% if link.0 %}
+                        <td><a href="{% url link.0 link.1 %}" class="intable">{{ col }}</a></td>
+                    {% else %}
+                        <td class="text-justify">{{ col }}</td>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table><br>
+    {% for target, name in add_url %}
+    <a href="{% url target %}" class="list-group-item list-group-item-success">{{ name }}</a>
+    {% endfor %}
+{% endblock %}

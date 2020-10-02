@@ -51,3 +51,4 @@ vatnumber
 # pytest
 
 aldryn-apphooks-config
+django-widget-tweaks

@@ -34,6 +34,7 @@
     {% query_filter post_list '' False 0 as services %}
     {% include 'includes/services.html' with services=services %}
 
+    {% include 'includes/contact.html' %}
     {% include 'includes/footer.html' %}
 
   {% addtoblock "js" %}

@@ -17,6 +17,7 @@ from allauth.utils import get_request_param, get_form_class
 from cms.models import Page, reverse
 from djangocms_blog.models import Post
 from invoicing.models import Invoice
+from tracker.models import Story, Developer
 from .models import Post as ApiPost, Donation, Volunteer
 from .serializer import UserSerializer, PageSerializer, PostSerializer
 
@@ -99,6 +100,29 @@ class VolunteerAjax(View):
 
         return HttpResponse(format_html(response), content_type='text/html', status=200)
 
+
+class ContactAjax(View):
+    def get(self, *args, **kwargs):
+
+        response = "No entry"
+        name = self.request.GET.get('name')
+        subject = self.request.GET.get('subject')
+        email = self.request.GET.get('email')
+        phone = self.request.GET.get('subject')
+        message = self.request.GET.get('message')
+        new_story = Story()
+
+        if name and email and message:
+
+            new_story.name = "{}".format(name)
+            new_story.description = "{}\n".format(subject)
+            new_story.description += "Contact {} on {} or by email {}\n".format(name, phone, email)
+            new_story.description += "{}\n".format(message)
+            new_story.estimate = 1
+            new_story.save()
+            response = 'Thank you ' + name + ' We will contact you shortly'
+
+        return HttpResponse(format_html(response), content_type='text/html', status=200)
 
 # Under development
 def create_invoice():
