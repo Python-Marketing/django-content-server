@@ -106,3 +106,8 @@ def render_productivity():
         html += "</tr>"
 
     return format_html(html)
+
+
+@register.simple_tag
+def render_portfolio_building():
+    return Story.objects.all()

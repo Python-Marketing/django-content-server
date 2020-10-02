@@ -51,7 +51,7 @@ def setup_server():
         try:
             shutil.copyfile(database, database + timestamp + '.reset')
         except:
-            print("No database yet...")
+            os.system('echo "Error : {}"'.format('No database yet...'))
 
         # Bye Bye data
         os.system("rm *.back")
