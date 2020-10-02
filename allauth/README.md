@@ -1,6 +1,6 @@
 # Django Content Server
 
-[Home](README.md)
+[Home](../README.md)
 
 ## Django All Auth
 
