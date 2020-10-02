@@ -1,5 +1,7 @@
 # Django Content Server
 
+[Home]()
+
 This assumes ubuntu server or desktop.
 
 ###Basic understanding needed to get site server running
