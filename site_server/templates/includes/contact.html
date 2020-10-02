@@ -87,19 +87,80 @@
 
                         {% render_productivity %}
 
-                        <!--<tr>-->
-                        <!--    <td>1</td>-->
-                        <!--    <td class="txt-oflo">Elite admin</td>-->
-                        <!--    <td>SALE</td>-->
-                        <!--    <td class="txt-oflo">April 18, 2017</td>-->
-                        <!--    <td><span class="text-success">$24</span></td>-->
-                        <!--</tr>-->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div></div>
+</section>
+
+<section class="site-section" id="section-portfolio">
+    <div class="container">
+        <div class="row mx-auto my-auto">
+
+            <div id="portfolioCarousel" class="carousel w-100 carousel-fade" data-ride="carousel">
+                <div class="carousel-inner w-100" role="listbox">
+                <div class="row">
+                    <div class="section-heading text-center col-md-12">
+                        <h2 class="mb-4"> Stories</h2>
+                    </div>
+                </div>
+                {% render_portfolio_building as portfolios %}
+                {% for portfolio in portfolios %}
+
+                    <div>
+
+                         <div class="col-md-6 col-lg-4 text-left mb-5">
+
+                            {% if portfolio.image %}
+                                <a href="#"><img src="{{ portfolio.image}}" width="100%" alt="Image placeholder" class="img-fluid"></a>
+                            {% endif %}
+
+                            <div class="card-body site-service-item">
+                                <h3 class="card-title">{{ portfolio }}</h3>
+                                <p class="card-text">{{ portfolio.description}}</p>
+
+                                <h4>Tasks</h4>
+                                <ol>
+                                    {% for task in portfolio.get_tasks%}
+                                    <li>{{ task }} - {{ task.description|safe }}</li>
+                                    {% endfor %}
+                                </ol>
+                                <br />
+                                <h4>Time</h4>
+                                <ol>
+                                    <li>Estimated : {{ portfolio.get_tasks_est_time }}</li>
+                                    <li>Work Done : {{ portfolio.get_spent_time }}</li>
+
+                                </ol>
+
+                                <div class="meta">
+                                    {% if portfolio.url %}
+                                        <a href='{{ portfolio.url }}' target='_blank'>Read More...</a>
+                                    {% endif %}
+                                    <a href="#1"><span class="icon-calendar"></span> {{ portfolio.creation_date }}</a>
+                                    <!--<a href="/static/record/index.html?story={{portfolio.id}}">record audio</a>-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+                </div>
+                <a class="carousel-control-prev w-auto" href="#portfolioCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next w-auto" href="#portfolioCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                <span class="sr-only">Next</span></a>
+
+            </div>
+        </div>
+    </div>
 </section>
 {% endif %}
 {% endwith %}
