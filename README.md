@@ -3,16 +3,16 @@
 So you have it running what now?
 
 
-* [Docs](installation) Installation [Documentation](https://docs.djangoproject.com/en/3.1/)
-* [Docs](site_server) Django Settings [Documentation](https://docs.djangoproject.com/en/3.1/)
-* [Docs](installation/SETUPSCRIPT.md) Setup script : setup_content_server.py
-* [Docs](allauth) Django All Auth - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
-* [Docs](cms) Django CMS - [Documentation](https://readthedocs.org/projects/django-cms/)
-* [Docs](djangocms_blog) Django Blog - [Documentation](https://djangocms-blog.readthedocs.io/en/latest/)
-* [Docs](api) Built in Django restAPI - [Documentation](https://www.django-rest-framework.org/)
+* [Readme](installation) Installation [Documentation](https://docs.djangoproject.com/en/3.1/)
+* [Readme](site_server) Django Settings [Documentation](https://docs.djangoproject.com/en/3.1/)
+* [Readme](installation/SETUPSCRIPT.md) Setup script : setup_content_server.py
+* [Readme](allauth) Django All Auth - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
+* [Readme](cms) Django CMS - [Documentation](https://readthedocs.org/projects/django-cms/)
+* [Readme](djangocms_blog) Django Blog - [Documentation](https://djangocms-blog.readthedocs.io/en/latest/)
+* [Readme](api) Built in Django restAPI - [Documentation](https://www.django-rest-framework.org/)
 * Secure - [Read More](https://docs.djangoproject.com/en/3.1/topics/security/)
-* [Docs](tracker) Story, Task and Time tracker - [Code Base](https://pypi.org/project/django-tasktracker/)
-* [Docs](invoicing) Invoicing on Time tracker - (in development) - [Code Base](https://pypi.org/project/django-invoicing/)
+* [Readme](tracker) Story, Task and Time tracker - [Code Base](https://pypi.org/project/django-tasktracker/)
+* [Readme](invoicing) Invoicing on Time tracker - (in development) - [Code Base](https://pypi.org/project/django-invoicing/)
 
 
 ## Features
