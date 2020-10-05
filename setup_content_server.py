@@ -100,6 +100,9 @@ def setup_server():
     if add_web_content:
         # We are now going to search the web to try add content
         os.system("python3 manage.py search_web")
+        # Lets process that content
+        # Can be run separately to update BlogPosts
+        os.system("python3 manage.py process_search_web_results")
 
     # Run this baby?
     if runserver:

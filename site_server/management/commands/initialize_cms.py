@@ -59,7 +59,7 @@ class Command(BaseCommand):
                 ).save()
         # Adding the default blog content
         from django.contrib.auth.models import User
-        do = 1#BlogPost.objects.all().count()
+        do = BlogPost.objects.all().count()
         if do == 0:
             for key, item in blogs.items():
                 self.stdout.write("Adding Blog content {}".format(item['title']))
@@ -90,7 +90,7 @@ class Command(BaseCommand):
 
         self.stdout.write("Changing site details")
         do = Site.objects.all().count()
-        if do == 0:
+        if do == 1:
             site = Site.objects.get(id=1)
             site_name = getattr(settings, 'SITE_NAME', 'localhost')
             site_domain = getattr(settings, 'SITE_URL', 'http://127.0.0.1')
@@ -128,7 +128,7 @@ class Command(BaseCommand):
             task.parent_story = Story.objects.get(id=1)
             task.save()
 
-        do = AllowedDomain.objects.all().count()
+        do = 1#AllowedDomain.objects.all().count()
         if do == 0:
             for key, item in AllowedSearchDomains.items():
                 self.stdout.write("{}".format(key))

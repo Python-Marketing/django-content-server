@@ -1,9 +1,8 @@
 from django import template
 from django.utils.html import format_html
 
-from api.models import Donation, Testimonial, Video
+from cms.models import Q
 from djangocms_blog.models import Post
-from cms.models import Page, ImproperlyConfigured, reverse, get_language, os, Q, PageUser
 from tracker.models import Story
 
 register = template.Library()
@@ -20,7 +19,6 @@ def query_lookup(query='', filter=[], pages=[]):
 
 @register.simple_tag
 def query_filter(request, query={}, value='', random=False, number=False):
-
     pages = [
         "Home", "Projects", "News", "Gallery", "Videos", "About", "Contact", "Events"
     ]
@@ -54,6 +52,7 @@ def query_filter(request, query={}, value='', random=False, number=False):
 
     return results
 
+
 @register.simple_tag
 def random_background(page_list={}, list=''):
     images = ['blank.jpg']
@@ -61,14 +60,13 @@ def random_background(page_list={}, list=''):
     from random import randrange
     random_index = randrange(len(images))
 
-
     import random
     result = random.choice(images)
     return images[random_index]
 
+
 @register.simple_tag
 def render_navigation(page_list={}, list=''):
-
     active_pages = list.split(',')
     links = ['<a class="nav-item-child nav-item-hover active" href="#Home">Home</a>']
     for page in page_list:
@@ -85,9 +83,9 @@ def render_navigation(page_list={}, list=''):
 
     return format_html(html)
 
+
 @register.simple_tag
 def render_productivity():
-
     est = 0
     html = ""
     for story in Story.objects.all():
@@ -98,12 +96,13 @@ def render_productivity():
         style = 'text-success'
         if int(completed) == 0:
             style = 'text-danger'
-        html += "<td class='{}'>{}</td>".format(style,completed)
+        html += "<td class='{}'>{}</td>".format(style, completed)
         todo = story.get_todo_tasks()
         if int(todo) == 0:
             todo = ''
         html += "<td class='text-danger'>{}</td>".format(todo)
-        html += "<td class=''><button onclick='add_task({})' class='btn btn-success'>Task</button></td>".format(story.id)
+        html += "<td class=''><button onclick='add_task({})' class='btn btn-success'>Task</button></td>".format(
+            story.id)
         html += "</tr>"
 
     return format_html(html)
