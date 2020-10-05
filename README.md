@@ -3,8 +3,8 @@
 So you have it running what now?
 
 
-* [Readme](installation) Installation [Documentation](https://docs.djangoproject.com/en/3.1/)
-* [Readme](site_server) Django Settings [Documentation](https://docs.djangoproject.com/en/3.1/)
+* [Readme](installation) Installation [Django Documentation](https://docs.djangoproject.com/en/3.1/)
+* [Readme](site_server) Django Settings [Settings Documentation](https://docs.djangoproject.com/en/3.1/topics/settings/)
 * [Readme](installation/SETUPSCRIPT.md) Setup script : setup_content_server.py
 * [Readme](allauth) Django All Auth - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
 * [Readme](cms) Django CMS - [Documentation](https://readthedocs.org/projects/django-cms/)
