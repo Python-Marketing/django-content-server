@@ -78,7 +78,7 @@ class BlogConfigForm(AppDataForm):
         help_text=_('When paginating list views, how many articles per page?')
     )
     template_prefix = forms.CharField(
-        label=_('Template prefix'), required=False, initial='includes',
+        label=_('Template prefix'), required=False, initial='starton',
         help_text=_('Alternative directory to load the blog templates from')
     )
     menu_structure = forms.ChoiceField(

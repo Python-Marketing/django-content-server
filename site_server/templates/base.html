@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     {% addtoblock "css" %}
-      {% with '/static/' as css_base %}
+      {% with '/static/starton/' as css_base %}
 
         <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600' rel='stylesheet' type='text/css'>
@@ -28,17 +28,17 @@
   <body>
     {% cms_toolbar %}
 
-    {% query_filter post_list '' True 0 as banner %}
-    {% include 'includes/banner.html' with banner=banner %}
+    {% query_filter request post_list '' True 0 as banner %}
+    {% include 'starton/banner.html' with banner=banner %}
 
-    {% query_filter post_list '' False 0 as services %}
-    {% include 'includes/services.html' with services=services %}
+    {% query_filter request post_list '' False 0 as services %}
+    {% include 'starton/services.html' with services=services %}
 
-    {% include 'includes/contact.html' %}
-    {% include 'includes/footer.html' %}
+    {% include 'starton/contact.html' %}
+    {% include 'starton/footer.html' %}
 
   {% addtoblock "js" %}
-    {% with '/static/' as js_base %}
+    {% with '/static/starton/' as js_base %}
       <script src="{{ js_base }}js/plagin-js/jquery-1.11.3.js"></script>
       <script src="{{ js_base }}bootstrap/js/bootstrap.min.js"></script>
       <script src="{{ js_base }}js/plagin-js/plagin.js"></script>
@@ -49,7 +49,7 @@
       <script src="{{ js_base }}record/app.js"></script>
     {% endwith %}
 
-  {% include 'includes/custom_scripts.js' %}
+  {% include 'starton/custom_scripts.js' %}
   {% endaddtoblock %}
 
   {% render_block "js" %}

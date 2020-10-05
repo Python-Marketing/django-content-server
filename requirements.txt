@@ -52,3 +52,8 @@ vatnumber
 
 aldryn-apphooks-config
 django-widget-tweaks
+# Searching the web
+google
+beautifulsoup4
+ordereddict
+Google-Images-Search

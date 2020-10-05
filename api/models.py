@@ -22,7 +22,7 @@ class Video(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
     body = models.TextField(blank=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return force_text(_('%s uploaded %s') % (self.author.get_full_name(), self.title))
 
 
@@ -33,7 +33,7 @@ class Donation(models.Model):
     date_created = models.DateTimeField(_('created at'), auto_now_add=True)
     date_modified = models.DateTimeField(_('modified at'), auto_now=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return force_text(_('%s donated %s') % (self.author.get_full_name(), self.amount))
 
 
@@ -47,6 +47,9 @@ class Testimonial(models.Model):
     def __str__(self):
         return force_text(_('%s wrote %s') % (self.author.get_full_name(), self.body))
 
+    def __unicode__(self):
+        return force_text(_('%s wrote %s') % (self.author.get_full_name(), self.body))
+
 
 class Volunteer(models.Model):
     author = models.ForeignKey(User, on_delete="cascade")
@@ -56,6 +59,10 @@ class Volunteer(models.Model):
     def __str__(self):
         return force_text(_('%s volunteered email address : %s') % (self.author.first_name, self.author.email))
 
+    def __unicode__(self):
+        return force_text(_('%s volunteered email address : %s') % (self.author.first_name, self.author.email))
+
+
 class Comment(models.Model):
     author = models.ForeignKey(User, on_delete="cascade")
     body = models.TextField(blank=True)
@@ -64,6 +71,48 @@ class Comment(models.Model):
     content_object = GenericForeignKey()
     date_created = models.DateTimeField(_('created at'), auto_now_add=True)
     date_modified = models.DateTimeField(_('modified at'), auto_now=True)
+
+
+# search domains div classes and id
+class AllowedDomain(models.Model):
+    name = models.CharField(max_length=75)
+    class_names = models.CharField(max_length=150)
+    id_names = models.CharField(max_length=150)
+
+    def __unicode__(self):
+        return force_text(_('%s') % self.name)
+
+    def __str__(self):
+        return force_text(_('%s') % self.name)
+
+class BeautifulGoogleSearch(models.Model):
+    allowed = models.ForeignKey(AllowedDomain, on_delete="cascade")
+    term = models.CharField(max_length=75)
+    link = models.URLField(blank=True)
+    body = models.TextField(blank=True)
+    date_created = models.DateTimeField(_('created at'), auto_now_add=True)
+    date_modified = models.DateTimeField(_('modified at'), auto_now=True)
+
+    def __unicode__(self):
+        return force_text(_('%s') % self.allowed.name)
+
+    def __str__(self):
+        return force_text(_('%s') % self.allowed.name)
+
+class BeautifulGoogleResult(models.Model):
+    bgs = models.ForeignKey(BeautifulGoogleSearch, on_delete="cascade")
+    title = models.CharField(max_length=75)
+    subtitle = models.CharField(max_length=75)
+    abstract = models.TextField(blank=True)
+    image = models.CharField(max_length=75)
+    date_created = models.DateTimeField(_('created at'), auto_now_add=True)
+    date_modified = models.DateTimeField(_('modified at'), auto_now=True)
+
+    def __unicode__(self):
+        return force_text(_('%s') % self.bgs.allowed.name)
+
+    def __str__(self):
+        return force_text(_('%s') % self.bgs.allowed.name)
 
 
 class Picture(models.Model):

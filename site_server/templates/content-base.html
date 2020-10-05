@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     {% addtoblock "css" %}
-      {% with '/static/' as css_base %}
+      {% with '/static/starton/' as css_base %}
 
         <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600' rel='stylesheet' type='text/css'>
@@ -29,23 +29,28 @@
     {% cms_toolbar %}
 
 
-    {% include 'includes/banner.html' with banner=post %}
+    {% include 'starton/banner.html' with banner=post %}
 
 
     {% render_model post "abstract" "" "" "safe" %}
 
-    <div class="btn-form">
-        <a href="/" class="btn btn-fill right-icon">Back <i class="icon icons8-retreat"></i></a>
-    </div>
 
 
     {% static_placeholder 'Blog Content' %}
 
 
-    {% include 'includes/footer.html' %}
+    <section class="features-section-8 relative background-light">
+        <div class="container">
+            <div class="btn-form">
+                <a href="/" class="btn btn-fill right-icon">Back <i class="icon icons8-retreat"></i></a>
+            </div>
+        </div>
+    </section>
+    <br /><br /><br />
+    {% include 'starton/footer.html' %}
 
   {% addtoblock "js" %}
-    {% with '/static/' as js_base %}
+    {% with '/static/starton/' as js_base %}
       <script src="{{ js_base }}js/plagin-js/jquery-1.11.3.js"></script>
       <script src="{{ js_base }}bootstrap/js/bootstrap.min.js"></script>
       <script src="{{ js_base }}js/plagin-js/plagin.js"></script>
@@ -53,7 +58,7 @@
       <script src="{{ js_base }}js/custom-scripts.js"></script>
     {% endwith %}
 
-  {% include 'includes/custom_scripts.js' %}
+  {% include 'starton/custom_scripts.js' %}
   {% endaddtoblock %}
 
   {% render_block "js" %}

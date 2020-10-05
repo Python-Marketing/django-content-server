@@ -1,0 +1,40 @@
+{% load cms_tags sekizai_tags %}
+{% load i18n easy_thumbnails_tags cms_tags site_server_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        {% block title %}{{ page.title }}{% endblock title %}
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% addtoblock "css" %}
+      {% with '/static/newsbit/' as css_base %}
+
+        <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,600,700" rel="stylesheet">
+        <link href="{{css_base}}plugin-frameworks/bootstrap.css" rel="stylesheet">
+        <link href="{{css_base}}fonts/ionicons.css" rel="stylesheet">
+        <link href="{{css_base}}common/styles.css" rel="stylesheet">
+      {% endwith %}
+    {% endaddtoblock %}
+
+    {% render_block "css" %}
+  </head>
+  <body>
+    {% cms_toolbar %}
+
+  {% addtoblock "js" %}
+    {% with '/static/newsbit/' as js_base %}
+        <script src="{{js_base}}plugin-frameworks/jquery-3.2.1.min.js"></script>
+        <script src="{{js_base}}plugin-frameworks/tether.min.js"></script>
+        <script src="{{js_base}}plugin-frameworks/bootstrap.js"></script>
+        <script src="{{js_base}}common/scripts.js"></script>
+    {% endwith %}
+
+  {% include 'newsbit/custom_scripts.js' %}
+  {% endaddtoblock %}
+
+  {% render_block "js" %}
+  </body>
+</html>
