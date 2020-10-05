@@ -131,3 +131,11 @@ under `site_server/management/commands` in `initialize_cms.py`
 ```
 
 Again this is for convenience. We can add default content and site settings during installation.
+
+```
+    # scrape the web
+    add_web_content = True
+
+```
+
+Added this to start scraping content. There is so much, lets use it.

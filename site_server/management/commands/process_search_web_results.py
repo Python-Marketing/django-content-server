@@ -1,32 +1,18 @@
-from urllib import parse
+import os
+import urllib.request
 
 from PIL import Image
-from django.contrib.sites.models import Site
+# This will create a page with the settings in default_site.py
+from bs4 import BeautifulSoup
+from django.contrib.auth.models import User
 from django.core.files import File
 from django.core.management.base import BaseCommand
-from rest_framework.utils import json
-
-from api.models import *
-from cms.api import create_page
-from djangocms_blog.cms_appconfig import BlogConfig
-from djangocms_blog.models import Post as BlogPost
-from site_server.default_site import blogs, image_sizes, developer
-from filer.models import ThumbnailOption
-
-from django.conf import settings
-
-# This will create a page with the settings in default_site.py
-from tracker.models import Developer, Story, Task
-import requests
-from bs4 import BeautifulSoup
-
-import os
-from django.contrib.auth.models import User
-from PIL import Image
 from filer.models import Image as FilerImage
 
-import urllib.request
-import requests as req
+from api.models import *
+from djangocms_blog.cms_appconfig import BlogConfig
+from djangocms_blog.models import Post as BlogPost
+
 
 def get_image_string(img):
     src = ''
@@ -61,7 +47,6 @@ def save_search(self, soup, search, results, src):
 
 
 def create_blog_post(self, results, src, title, search):
-
     path = "media/"
     image = False
     # Google image search has limits
@@ -71,6 +56,7 @@ def create_blog_post(self, results, src, title, search):
     # Manual search
     manual_search = True
 
+    # Seems to be working but this whole file need adapting
     if manual_search:
 
         from urllib.request import Request, urlopen
@@ -114,6 +100,7 @@ def create_blog_post(self, results, src, title, search):
                 if width > 500 and height > 200:
                     with open(path + name, "rb") as f:
                         file_obj = File(f, name=name)
+                        from django.contrib.auth.models import User
                         image = FilerImage.objects.create(owner=User.objects.get(id=1),
                                                           original_filename=path + name,
                                                           file=file_obj)
@@ -122,6 +109,7 @@ def create_blog_post(self, results, src, title, search):
                 else:
                     os.system("rm {}".format(path + name))
 
+    # First attempted not really working
     if page_images:
         for url in src.split(","):
             if url.find("http") != -1:
@@ -148,6 +136,7 @@ def create_blog_post(self, results, src, title, search):
                 else:
                     os.system("rm {}".format(path + name))
 
+    # Not in use limited requests
     if google_search_images:
 
         api_key = "AIzaSyBr5FSmPl_RffFM_X_bLQXGFOBm8DborDY"
@@ -161,20 +150,18 @@ def create_blog_post(self, results, src, title, search):
         _search_params = {
             'q': title,
             'num': 1,
-            #'safe': 'off', #high|medium|off
-            #'fileType': 'png', #jpg|gif|png
-            #'imgType': 'photo', #clipart|face|lineart|news|photo
-            'imgSize': 'XXLARGE', #huge|icon|large|medium|small|xlarge|xxlarge
-            #'imgDominantColor': 'white', #black|blue|brown|gray|green|pink|purple|teal|white|yellow
-            #'rights': '' #cc_publicdomain|cc_attribute|cc_sharealike|cc_noncommercial|cc_nonderived
+            # 'safe': 'off', #high|medium|off
+            # 'fileType': 'png', #jpg|gif|png
+            # 'imgType': 'photo', #clipart|face|lineart|news|photo
+            'imgSize': 'XXLARGE',  # huge|icon|large|medium|small|xlarge|xxlarge
+            # 'imgDominantColor': 'white', #black|blue|brown|gray|green|pink|purple|teal|white|yellow
+            # 'rights': '' #cc_publicdomain|cc_attribute|cc_sharealike|cc_noncommercial|cc_nonderived
         }
 
         gis.search(search_params=_search_params)
         for image in gis.results():
-
             try:
                 image.download('media/')
-                #self.stdout.write(str(image.path))
                 with open(image.path, "rb") as f:
 
                     file_obj = File(f, name=image.path.split('/')[1])
@@ -238,9 +225,8 @@ def create_blog_post(self, results, src, title, search):
             instance.save()
         except:
             return False
-
         return instance
-    #return False
+    return False
 
 
 class Command(BaseCommand):
@@ -248,9 +234,7 @@ class Command(BaseCommand):
     def handle(self, **options):
 
         self.stdout.write("Initialize Web content CMS")
-
         searches = BeautifulGoogleSearch.objects.all()
-
         # Lets process the searches and save the results
         for search in searches:
             soup = BeautifulSoup(search.body, 'html.parser')
@@ -264,7 +248,6 @@ class Command(BaseCommand):
             if search.allowed.class_names != '':
                 self.stdout.write("ID : " + str(search.allowed.id_names))
             else:
-                #self.stdout.write("Running Blind !!!!!!!!!!!!!! ")
                 results = soup.find()
 
             if results:
@@ -272,7 +255,6 @@ class Command(BaseCommand):
                     s.extract()
 
                 results = clean_soup(results)
-
                 saved_search_result = save_search(self, soup, search, results, src)
                 post = create_blog_post(self, results, src, saved_search_result.title, search)
 

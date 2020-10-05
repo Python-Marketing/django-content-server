@@ -1,22 +1,11 @@
 import sys
 
-from PIL import Image
-from django.contrib.sites.models import Site
+# This will create a page with the settings in default_site.py
+import requests
+from bs4 import BeautifulSoup
 from django.core.management.base import BaseCommand
 
 from api.models import *
-from cms.api import create_page
-from djangocms_blog.cms_appconfig import BlogConfig
-from djangocms_blog.models import Post as BlogPost
-from site_server.default_site import blogs, image_sizes, developer
-from filer.models import ThumbnailOption
-
-from django.conf import settings
-
-# This will create a page with the settings in default_site.py
-from tracker.models import Developer, Story, Task
-import requests
-from bs4 import BeautifulSoup
 
 
 class Command(BaseCommand):
@@ -56,7 +45,6 @@ class Command(BaseCommand):
                         allowed.class_names = ''
                         allowed.id_names = ''
                         allowed.save()
-
 
                     page = requests.get(j)
                     soup = BeautifulSoup(page.content, 'html.parser')
