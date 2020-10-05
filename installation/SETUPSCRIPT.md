@@ -118,7 +118,7 @@ Sometimes deleting everything and starting again is best. This creates a backup 
     reset = True
 ```
 
-###Initialise CMS
+### Initialise CMS
 
 Love django, now we can add default content.
 
@@ -136,6 +136,19 @@ Again this is for convenience. We can add default content and site settings duri
     # scrape the web
     add_web_content = True
 
+```
+
+In the `site_server/management/commands` folder in `search_web.py`
+
+```            
+        # to search
+        queries = [
+            "science supernovae news 2020",
+            "science Python Programming news 2020",
+            "science evolution and paleontology 2020",
+            "science rockets elon musk 2020",
+            "science abiogenesis 2020",
+        ]
 ```
 
 Added this to start scraping content. There is so much, lets use it.
