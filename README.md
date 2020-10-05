@@ -1,21 +1,38 @@
 # Django Content Server
 
-So you have it running what now?
+
+### What is it?
 
 
-* [Readme](installation) Installation [Django Documentation](https://docs.djangoproject.com/en/3.1/)
-* [Readme](site_server) Django Settings [Settings Documentation](https://docs.djangoproject.com/en/3.1/topics/settings/)
-* [Readme](installation/SETUPSCRIPT.md) Setup script : setup_content_server.py
-* [Readme](allauth) Django All Auth - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
-* [Readme](cms) Django CMS - [Documentation](https://readthedocs.org/projects/django-cms/)
-* [Readme](djangocms_blog) Django Blog - [Documentation](https://djangocms-blog.readthedocs.io/en/latest/)
-* [Readme](api) Built in Django restAPI - [Documentation](https://www.django-rest-framework.org/)
+Built on Django this collection on modules aims to simplify the creation and updating of content on a website or web application.
+
+
+## Django
+
+* Installation : [Read me](installation) - [Django Documentation](https://docs.djangoproject.com/en/3.1/)
+* Django Settings : [Read me](site_server) - [Settings Documentation](https://docs.djangoproject.com/en/3.1/topics/settings/)
+
+some reviews :
+
+[Why Django is the Best Web Framework for Your Project](https://steelkiwi.com/blog/why-django-best-web-framework-your-project/)
+
+[What is Django? Advantages and Disadvantages](https://hackr.io/blog/what-is-django-advantages-and-disadvantages-of-using-django)
+
+### Social User Management
+
+* Django All Auth : [Read me](allauth) - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
+
+### Secure
+
 * Secure - [Read More](https://docs.djangoproject.com/en/3.1/topics/security/)
-* [Readme](tracker) Story, Task and Time tracker - [Code Base](https://pypi.org/project/django-tasktracker/)
-* [Readme](invoicing) Invoicing on Time tracker - (in development) - [Code Base](https://pypi.org/project/django-invoicing/)
 
+### Content management
 
-## Features
+We can scrape content from the web or design it before hand.
+
+Updating the same way, lets work smarter not harder.
+
+* Setup script :  [Readme](installation/SETUPSCRIPT.md) setup_content_server.py
 
 Added web scraping capabilities. 
 
@@ -34,11 +51,34 @@ In the `site_server/management/commands` folder in `search_web.py`
 
 Adds content on given search params. The more specific the search the better the results.
 
+But its not just Django.
+
+## Django CMS and Django CMS Blog
+
+On Django we have Django CMS and Django CMS Blog.
+
+* Django CMS : [Readme](cms) - [Documentation](https://readthedocs.org/projects/django-cms/)
+* Django Blog : [Readme](djangocms_blog) - [Documentation](https://djangocms-blog.readthedocs.io/en/latest/)
+
+By default allows some amazing editing functionality.
+
+### Rest API
+
+* Built in Django restAPI : [Read me](api) - [Documentation](https://www.django-rest-framework.org/)
+
+To help simplify the site requirements
+
 
 ### NB still in development
 
 Backend 90% complete still need to get working on a descent front end to display content.
 Started adding newsbit template.
+
+
+* [Readme](tracker) Story, Task and Time tracker - [Code Base](https://pypi.org/project/django-tasktracker/)
+* [Readme](invoicing) Invoicing on Time tracker - (in development) - [Code Base](https://pypi.org/project/django-invoicing/)
+
+
 
 
 
