@@ -229,7 +229,8 @@ CMS_LANGUAGES = {
 
 # Default template used
 CMS_TEMPLATES = (
-    ('includes/home.html', 'Home'),
+    ('starton/home.html', 'Start'),
+    #('newsbit/home.html', 'Newsbit'),
 )
 
 X_FRAME_OPTIONS = '*'

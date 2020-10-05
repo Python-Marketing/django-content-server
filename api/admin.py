@@ -1,7 +1,8 @@
 from cms.extensions import PageExtensionAdmin
 from django.contrib import admin
 
-from .models import PageDetailExtension, Post, Donation, Volunteer, Testimonial, Video
+from .models import PageDetailExtension, Post, Donation, Volunteer, Testimonial, Video, AllowedDomain, \
+    BeautifulGoogleSearch, BeautifulGoogleResult
 from tracker.models import Story, Task, Developer, SpentTime
 
 class PageDetailExtensionAdmin(PageExtensionAdmin):
@@ -31,14 +32,30 @@ class VideoAdmin(admin.ModelAdmin):
 class StoryAdmin(admin.ModelAdmin):
     pass
 
+
 class TaskAdmin(admin.ModelAdmin):
     pass
+
 
 class DeveloperAdmin(admin.ModelAdmin):
     pass
 
+
 class SpentTimeAdmin(admin.ModelAdmin):
     pass
+
+
+class AllowedDomainAdmin(admin.ModelAdmin):
+    pass
+
+
+class BeautifulGoogleSearchAdmin(admin.ModelAdmin):
+    pass
+
+
+class BeautifulGoogleResultAdmin(admin.ModelAdmin):
+    pass
+
 
 admin.site.register(PageDetailExtension, PageDetailExtensionAdmin)
 admin.site.register(Video, VideoAdmin)
@@ -50,3 +67,10 @@ admin.site.register(Story, StoryAdmin)
 admin.site.register(Task, TaskAdmin)
 admin.site.register(Developer, DeveloperAdmin)
 admin.site.register(SpentTime, SpentTimeAdmin)
+admin.site.register(AllowedDomain, AllowedDomainAdmin)
+admin.site.register(BeautifulGoogleSearch, BeautifulGoogleSearchAdmin)
+admin.site.register(BeautifulGoogleResult, BeautifulGoogleResultAdmin)
+
+
+
+

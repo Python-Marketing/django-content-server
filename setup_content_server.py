@@ -17,19 +17,24 @@ def setup_server():
     runserver = False
     # Do you need to migrate the database? Safer to leave True
     # if you have changed models it must be True
-    migrate = True
+    migrate = False
     # Do you need to backup the database? Safer to leave True (We are using sqlight)
-    backup = True
+    backup = False
     # How many as in how many copies since script is run.
     no_backups = 1
     # Get pip involved?
-    install_requirements = True
+    install_requirements = False
     # This deletes the database creating a reset copy on the last database
     # Use wisely...
     reset = True
     # This runs the custom script in site_server/management initialize_cms.py
     add_default_content = True
+    # scrape the web
+    add_web_content = True
 
+    """
+    No need to edit anything further down unless you are expanding
+    """
     if install_requirements:
         # Its a large application might take time
         os.system("pip install -r requirements.txt")
@@ -91,6 +96,10 @@ def setup_server():
         # Adds image options and some blogs for display.
         # Can be used to add more content
         os.system("python3 manage.py initialize_cms")
+
+    if add_web_content:
+        # We are now going to search the web to try add content
+        os.system("python3 manage.py search_web")
 
     # Run this baby?
     if runserver:

@@ -19,11 +19,13 @@ def query_lookup(query='', filter=[], pages=[]):
 
 
 @register.simple_tag
-def query_filter(query={}, value='', random=False, number=False):
+def query_filter(request, query={}, value='', random=False, number=False):
 
     pages = [
         "Home", "Projects", "News", "Gallery", "Videos", "About", "Contact", "Events"
     ]
+
+    request.session['used_blogs'] = "Value"
 
     values = value.split(',')
     results = query_lookup(query, values, pages)
@@ -33,8 +35,7 @@ def query_filter(query={}, value='', random=False, number=False):
         for value in values:
             search.add(Q(translations__title__icontains=value), Q.OR)
 
-
-        query = Post.objects.filter(search)#.exclude(translations__title=value).exclude(translations__title__in=pages)
+        query = Post.objects.filter(search).exclude(main_image__isnull=True).exclude(publish=False)
         results = query_lookup(query, values)
 
     if number:
