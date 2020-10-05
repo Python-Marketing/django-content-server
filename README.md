@@ -37,7 +37,7 @@ Adds content on given search params. The more specific the search the better the
 
 ### NB still in development
 
-Backend 90% complete still need to working on a descent front end to display content.
+Backend 90% complete still need to get working on a descent front end to display content.
 Started adding newsbit template.
 
 
