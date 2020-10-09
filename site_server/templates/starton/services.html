@@ -22,7 +22,14 @@
 								{% thumbnail service.main_image 1024x768 as image %}
 								<div class="project-image cover" style="background-image: url({{ image.url }});">
 							{% else %}
-								<div class="project-image cover" style="background-image: url({{static_base}}images/{% random_background %});">
+
+								{% if service.get_gallery_image %}
+									{% thumbnail service.get_gallery_image 1024x768 as image %}
+									<div class="project-image cover" style="background-image: url({{ image.url }});">
+								{% else %}
+									<div class="project-image cover" style="background-image: url({{static_base}}images/{% random_background %});">
+								{% endif %}
+
 							{% endif %}
 							</div>
 						</div>

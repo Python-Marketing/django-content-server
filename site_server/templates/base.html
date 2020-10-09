@@ -28,11 +28,19 @@
   <body>
     {% cms_toolbar %}
 
+    {% load menu_tags %}
+    <ul>
+        {% show_menu 0 100 100 100 %}
+    </ul>
+
+
     {% query_filter request post_list '' True 0 as banner %}
     {% include 'starton/banner.html' with banner=banner %}
 
-    {% query_filter request post_list '' False 0 as services %}
-    {% include 'starton/services.html' with services=services %}
+
+
+    {% block content_blog %}
+	{% endblock %}
 
     {% include 'starton/contact.html' %}
     {% include 'starton/footer.html' %}

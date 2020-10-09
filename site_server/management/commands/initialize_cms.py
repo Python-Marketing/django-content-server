@@ -3,48 +3,22 @@ from django.contrib.sites.models import Site
 from django.core.management.base import BaseCommand
 
 from api.models import *
-from cms.api import create_page
+
 from djangocms_blog.cms_appconfig import BlogConfig
 from djangocms_blog.models import Post as BlogPost
 from site_server.default_site import blogs, image_sizes, developer, AllowedSearchDomains
 from filer.models import ThumbnailOption
-
 from django.conf import settings
 
 
-# This will create a page with the settings in default_site.py
 from tracker.models import Developer, Story, Task
-
-
-def create_new_page(self):
-    self.stdout.write("Creating Page")
-    from site_server.default_site import (
-        title, template, language, menu_title, slug,
-        meta_description, created_by, in_navigation,
-        published, site, xframe_options, page_title,
-    )
-    self.stdout.write("Title : {}".format(title))
-    # Call the create_page function from cms.api
-    create_page(
-        title=title,
-        template=template,
-        language=language,
-        menu_title=menu_title,
-        slug=slug,
-        meta_description=meta_description,
-        created_by=created_by,
-        in_navigation=in_navigation,
-        published=published,
-        site=site,
-        xframe_options=xframe_options,
-        page_title=page_title
-    )
 
 
 class Command(BaseCommand):
 
     def handle(self, **options):
         self.stdout.write("Initialize CMS")
+
         # Add some image options
         do = ThumbnailOption.objects.all().count()
         if do == 0:
@@ -55,10 +29,10 @@ class Command(BaseCommand):
                     width=item['width'],
                     height=item['height'],
                     crop=False,
-                    upscale=False
+                    upscale=True
                 ).save()
+
         # Adding the default blog content
-        from django.contrib.auth.models import User
         do = BlogPost.objects.all().count()
         if do == 0:
             for key, item in blogs.items():
@@ -69,7 +43,6 @@ class Command(BaseCommand):
                 from filer.models import Image
 
                 filename = 'file'
-                filepath = 'path/to/file'
                 user = User.objects.get(id=1)
 
                 with open(item['image_path'] + item['image'], "rb") as f:
@@ -78,16 +51,17 @@ class Command(BaseCommand):
                     image = Image.objects.create(owner=user,
                                                  original_filename=filename,
                                                  file=file_obj)
-                    instance = BlogPost()
-                    instance.author = user
-                    instance.title = item['title']
-                    instance.subtitle = item['subtitle']
-                    instance.abstract = item['abstract']
-                    instance.app_config = BlogConfig.objects.latest('id')
-                    instance.publish = True
-                    instance.main_image = image
-                    instance.save()
+                    post = BlogPost()
+                    post.author = user
+                    post.title = item['title']
+                    post.subtitle = item['subtitle']
+                    post.abstract = item['abstract']
+                    post.app_config = BlogConfig.objects.latest('id')
+                    post.publish = True
+                    post.main_image = image
+                    post.save()
 
+        # Adapting site settings
         self.stdout.write("Changing site details")
         do = Site.objects.all().count()
         if do == 1:
@@ -98,6 +72,7 @@ class Command(BaseCommand):
             site.domain = site_domain
             site.save()
 
+        # Example Story
         self.stdout.write("Setting up first Story")
         do = Story.objects.all().count()
         if do == 0:
@@ -107,6 +82,8 @@ class Command(BaseCommand):
             new_story.description += "Get customer to use form"
             new_story.estimate = 1
             new_story.save()
+
+        # We need to setup a developer for tracker
         self.stdout.write("Setting up Story developer")
         do = Developer.objects.all().count()
         if do == 0:
@@ -115,6 +92,7 @@ class Command(BaseCommand):
             delevoper.last_name = developer['last_name']
             delevoper.save()
 
+        # Example Task
         self.stdout.write("Setting up Story Task")
         do = Task.objects.all().count()
         if do == 0:
@@ -128,14 +106,15 @@ class Command(BaseCommand):
             task.parent_story = Story.objects.get(id=1)
             task.save()
 
-        do = 1#AllowedDomain.objects.all().count()
-        if do == 0:
-            for key, item in AllowedSearchDomains.items():
-                self.stdout.write("{}".format(key))
-                domain = AllowedDomain()
-                domain.name = key
-                domain.class_names = ""#item['class_names']
-                domain.id_names = ""#item['id_names']
-                domain.save()
+        # TODO : Delete
+        # do = 1#AllowedDomain.objects.all().count()
+        # if do == 0:
+        #     for key, item in AllowedSearchDomains.items():
+        #         self.stdout.write("{}".format(key))
+        #         domain = AllowedDomain()
+        #         domain.name = key
+        #         domain.class_names = ""#item['class_names']
+        #         domain.id_names = ""#item['id_names']
+        #         domain.save()
         self.stdout.write("Site ready")
 

@@ -33,7 +33,7 @@ def query_filter(request, query={}, value='', random=False, number=False):
         for value in values:
             search.add(Q(translations__title__icontains=value), Q.OR)
 
-        query = Post.objects.filter(search).exclude(main_image__isnull=True).exclude(publish=False)
+        query = Post.objects.filter(search).exclude(publish=False)#.exclude(main_image__isnull=True)
         results = query_lookup(query, values)
 
     if number:
