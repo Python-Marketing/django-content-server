@@ -4,14 +4,24 @@ import glob
 import os
 import shutil
 from datetime import datetime
+from django.conf import settings
+import django
+
+# Initialise django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "site_server.settings")
+django.setup()
+
+# timestamp used
+timestamp = str(datetime.now()).replace(" ", "")
+# Get name from settings
+database = getattr(settings, 'DATABASE_NAME')
+# Edit these details for you use cas
+superuser = 'developer'
+superuser_email = 'django.python.pro@gmail.com'
+superuser_password = 'password'
 
 
 def setup_server():
-    # Edit these details for you use cas
-    superuser = 'developer'
-    superuser_email = 'django.python.pro@gmail.com'
-    superuser_password = 'password'
-
     # Setup the django handling
     # only use this if not using Pycharm or another way of running the server
     runserver = False
@@ -35,22 +45,12 @@ def setup_server():
     """
     No need to edit anything further down unless you are expanding
     """
+    # need to install django before we can access it install requirements
     if install_requirements:
         # Its a large application might take time
         os.system("pip install -r requirements.txt")
 
-    # need ti install django before we can access it install requirements
-    import django
-    # Initialise django
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "site_server.settings")
-    django.setup()
-    from django.conf import settings
-
-    # timestamp used
-    timestamp = str(datetime.now()).replace(" ", "")
-    # Get name from settings
-    database = getattr(settings, 'DATABASE_NAME')
-
+    # NB development only
     if reset:
         # Lets save that database just in case, we are removing them and backups
         try:
@@ -102,7 +102,8 @@ def setup_server():
         os.system("python3 manage.py search_web")
         # Lets process that content
         # Can be run separately to update BlogPosts
-        os.system("python3 manage.py process_search_web_results")
+        #os.system("python3 manage.py process_search_web_results")
+        pass
 
     # Run this baby?
     if runserver:

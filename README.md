@@ -79,8 +79,40 @@ Started adding newsbit template.
 * [Readme](invoicing) Invoicing on Time tracker - (in development) - [Code Base](https://pypi.org/project/django-invoicing/)
 
 
+## Features
+
+### Some Packages used:
+
+#### Google Search
+google [Link](https://pypi.org/project/google/)
+
+Easy access to a search result and then Beautiful Soup takes over
+
+#### Beautiful Soup 4 webscraping
+beautifulsoup4 [Link](https://pypi.org/project/BeautifulSoup/)
+
+Easy to work with, just the different elements in countless websites to deal with.
+
+#### I like this package 
+but has low limits easy to get images
+
+Google-Images-Search [Link](https://pypi.org/project/Google-Images-Search/)
+
+Can be enabled and used...
+
+#### Bootstrap 4 out of the box
+
+djangocms-bootstrap4 [Link](https://pypi.org/project/djangocms-bootstrap4/)
+
+Make styling simpler for a backend developer
+
+#### Easily manage files and images
+
+With Jango CMS and Filer everything is point and click
+
+django-filer [Link](https://pypi.org/project/django-filer/)
 
 
 
 
- Compiled by Jody Beggs
+ Compiled by Jody Beggs 
