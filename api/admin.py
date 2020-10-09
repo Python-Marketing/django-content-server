@@ -4,6 +4,7 @@ from django.contrib import admin
 from .models import PageDetailExtension, Post, Donation, Volunteer, Testimonial, Video, AllowedDomain, \
     BeautifulGoogleSearch, BeautifulGoogleResult
 from tracker.models import Story, Task, Developer, SpentTime
+from .models import Gallery as BlogGallery
 
 class PageDetailExtensionAdmin(PageExtensionAdmin):
     pass
@@ -56,6 +57,11 @@ class BeautifulGoogleSearchAdmin(admin.ModelAdmin):
 class BeautifulGoogleResultAdmin(admin.ModelAdmin):
     pass
 
+class BlogGalleryAdmin(admin.ModelAdmin):
+
+    fields = ["blog_post", "image", "caption", "active"]
+    list_display = ("blog_post", "image", "active")
+    pass
 
 admin.site.register(PageDetailExtension, PageDetailExtensionAdmin)
 admin.site.register(Video, VideoAdmin)
@@ -70,7 +76,7 @@ admin.site.register(SpentTime, SpentTimeAdmin)
 admin.site.register(AllowedDomain, AllowedDomainAdmin)
 admin.site.register(BeautifulGoogleSearch, BeautifulGoogleSearchAdmin)
 admin.site.register(BeautifulGoogleResult, BeautifulGoogleResultAdmin)
-
+admin.site.register(BlogGallery, BlogGalleryAdmin)
 
 
 

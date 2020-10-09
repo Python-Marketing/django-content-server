@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericRelation, GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from filer.fields.image import FilerImageField
 
 from cms.extensions import PageExtension
 from cms.extensions.extension_pool import extension_pool
@@ -76,6 +77,9 @@ class Comment(models.Model):
 # search domains div classes and id
 class AllowedDomain(models.Model):
     name = models.CharField(max_length=75)
+    domain = models.URLField(blank=True)
+    term = models.CharField(max_length=75, blank=True)
+    page_name = models.CharField(max_length=75, default=None)
     class_names = models.CharField(max_length=150)
     id_names = models.CharField(max_length=150)
 
@@ -84,6 +88,7 @@ class AllowedDomain(models.Model):
 
     def __str__(self):
         return force_text(_('%s') % self.name)
+
 
 class BeautifulGoogleSearch(models.Model):
     allowed = models.ForeignKey(AllowedDomain, on_delete="cascade")
@@ -98,6 +103,7 @@ class BeautifulGoogleSearch(models.Model):
 
     def __str__(self):
         return force_text(_('%s') % self.allowed.name)
+
 
 class BeautifulGoogleResult(models.Model):
     bgs = models.ForeignKey(BeautifulGoogleSearch, on_delete="cascade")
@@ -121,6 +127,21 @@ class Picture(models.Model):
     caption = models.TextField(blank=True)
     comments = GenericRelation('Comment')
 
+
+class Gallery(models.Model):
+    blog_post = models.ForeignKey(BlogPost, on_delete="cascade")
+    image = FilerImageField(verbose_name=_('gallery images'), blank=True, null=True,
+                                 on_delete=models.SET_NULL,
+                                 related_name='djangocms_blog_post_gallery')
+    caption = models.TextField(blank=True, default='Change Me')
+    comments = GenericRelation('Comment')
+    active = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return force_text(_('%s') % self.caption)
+
+    def __str__(self):
+        return force_text(_('%s') % self.caption)
 
 class Page(models.Model):
     slug = models.SlugField(unique=True)
