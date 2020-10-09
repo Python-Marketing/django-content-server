@@ -5,6 +5,8 @@ import hashlib
 
 from aldryn_apphooks_config.fields import AppHookConfigField
 from aldryn_apphooks_config.managers.parler import AppHookConfigTranslatableManager
+
+
 from cms.models import CMSPlugin, PlaceholderField
 from django.conf import settings as dj_settings
 from django.contrib.auth import get_user_model
@@ -480,6 +482,18 @@ class Post(KnockerModel, BlogMetaMixin, TranslatableModel):
             post=self.safe_translation_getter('slug', any_language=True)
         )
 
+    def get_gallery_image(self):
+        """
+        Returns the best gallery image
+        """
+        from api.models import Gallery
+        if self.id:
+            gallery = Gallery.objects.filter(blog_post=self.id)
+            if gallery:
+                self.main_image = gallery[0].image
+                self.save()
+                return gallery[0].image
+        return False
 
 class BasePostPlugin(CMSPlugin):
     app_config = AppHookConfigField(
