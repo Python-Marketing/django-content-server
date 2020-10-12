@@ -29,7 +29,7 @@ def setup_server():
     install_requirements = True
     # This deletes the database creating a reset copy on the last database
     # Use wisely...
-    reset = False
+    reset = True
     # This runs the custom script in site_server/management initialize_cms.py
     add_default_content = True
 
