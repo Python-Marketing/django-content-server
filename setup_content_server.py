@@ -33,6 +33,8 @@ def setup_server():
     # This runs the custom script in site_server/management initialize_cms.py
     add_default_content = True
 
+    add_web_content = False
+
     """
     No need to edit anything further down unless you are expanding
     """
@@ -100,6 +102,9 @@ def setup_server():
         # Adds image options and some blogs for display.
         # Can be used to add more content
         os.system("python3 manage.py initialize_cms")
+
+    # Not default
+    if add_web_content:
         os.system("python3 manage.py search_web")
 
     # Run this baby?
