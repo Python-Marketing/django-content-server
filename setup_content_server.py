@@ -17,7 +17,7 @@ superuser_password = 'password'
 def setup_server():
     # Setup the django handling
     # only use this if not using Pycharm or another way of running the server
-    runserver = False
+    runserver = True
     # Do you need to migrate the database? Safer to leave True
     # if you have changed models it must be True
     migrate = True
@@ -29,7 +29,7 @@ def setup_server():
     install_requirements = True
     # This deletes the database creating a reset copy on the last database
     # Use wisely...
-    reset = True
+    reset = False
     # This runs the custom script in site_server/management initialize_cms.py
     add_default_content = True
 
@@ -100,10 +100,16 @@ def setup_server():
         # Adds image options and some blogs for display.
         # Can be used to add more content
         os.system("python3 manage.py initialize_cms")
+        os.system("python3 manage.py search_web")
 
     # Run this baby?
     if runserver:
-        os.system("python3 manage.py runserver")
+        import socket
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        ip_address = s.getsockname()[0]
+        s.close()
+        os.system("python3 manage.py runserver {}:9000".format(ip_address))
 
 
 setup_server()
