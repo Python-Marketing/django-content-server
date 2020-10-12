@@ -52,6 +52,14 @@ Then we run the following code, in a terminal in the directory `/development/dja
 To activate the virtual env
 
 
+### Add your IP address into the `settings.py` file in `site_server` folder
+
+```
+ALLOWED_HOSTS = ['192.168.1.3', '10.42.0.1', '10.42.0.122']
+```
+
+#### You only need One IP Address in allowed hosts
+
 ### OK hard work is done. Lets start installing and migrating the app.
 
 Run the script :
