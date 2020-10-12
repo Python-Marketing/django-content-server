@@ -32,11 +32,11 @@ We can scrape content from the web or design it before hand.
 
 Updating the same way, lets work smarter not harder.
 
-* Setup script :  [Readme](installation/SETUPSCRIPT.md) setup_content_server.py
+### Setup script :  [Readme](installation/SETUPSCRIPT.md) setup_content_server.py
 
 This adds 3 blogs to a page automatically
 
-* Web Content :  [Readme](installation/SEARCHWEB.md) `python3 manage.py search_web`
+### Web Content :  [Readme](installation/SEARCHWEB.md) `python3 manage.py search_web`
 
 Added web scraping capabilities. 
 
