@@ -106,8 +106,6 @@ The username and password are in `setup_content_server.py`
 
 Read through the script its self explanatory. You can adapt it to so almost anything.
 
-### NB - leave runserver off until installation process is complete.
-
 # Lastly
 
 press `ctrl+c` to cancel runserver then...
@@ -118,4 +116,4 @@ When that's done
 
 Run `python manange.py runserver ip:9000`
 
-NB you can edit `setup_content_server.py` and change all the checks to False except for runserver...
+### NB you can edit `setup_content_server.py` and change all the checks to False except for runserver...
