@@ -56,4 +56,5 @@ django-widget-tweaks
 google
 beautifulsoup4
 ordereddict
-Google-Images-Search
+# Not using right now
+#Google-Images-Search
