@@ -34,19 +34,19 @@ Updating the same way, lets work smarter not harder.
 
 * Setup script :  [Readme](installation/SETUPSCRIPT.md) setup_content_server.py
 
+This adds 3 blogs to a page automatically
+
+* Web Content :  [Readme](installation/SEARCHWEB.md) `python3 manage.py search_web`
+
 Added web scraping capabilities. 
 
 In the `site_server/management/commands` folder in `search_web.py`
 
 ```            
         # to search
-        queries = [
-            "science supernovae news 2020",
-            "science Python Programming news 2020",
-            "science evolution and paleontology 2020",
-            "science rockets elon musk 2020",
-            "science abiogenesis 2020",
-        ]
+        queries = {
+            "Hubble": "Hubble images science news random",
+        }
 ```
 
 Adds content on given search params. The more specific the search the better the results.

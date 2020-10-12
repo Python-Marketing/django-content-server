@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% query_filter request post_list '' True 0 as banner %}
     <title>
-        {% block title %}{{ page.title }}{% endblock title %}
+        {% block title %}{{ banner.get_title }}{% endblock title %}
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,19 +29,11 @@
   <body>
     {% cms_toolbar %}
 
-    {% load menu_tags %}
-    <ul>
-        {% show_menu 0 100 100 100 %}
-    </ul>
 
-
-    {% query_filter request post_list '' True 0 as banner %}
     {% include 'starton/banner.html' with banner=banner %}
 
-
-
-    {% block content_blog %}
-	{% endblock %}
+    {% query_filter request post_list '' False 0 as services %}
+    {% include 'starton/services.html' with services=services %}
 
     {% include 'starton/contact.html' %}
     {% include 'starton/footer.html' %}

@@ -143,6 +143,7 @@ class Gallery(models.Model):
     def __str__(self):
         return force_text(_('%s') % self.caption)
 
+
 class Page(models.Model):
     slug = models.SlugField(unique=True)
 

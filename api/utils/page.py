@@ -34,10 +34,13 @@ def create_new_page(self, title="Blank", description="Default", created_by="", i
     app_hook.title = title
     app_hook.app_title = title
     #app_hook.app_title
-    app_hook.save()
+    try:
+        app_hook.save()
+    except:
+        pass
 
 
-    create_page(
+    page = create_page(
         title=title,
         template=template,
         language=language,
@@ -52,3 +55,11 @@ def create_new_page(self, title="Blank", description="Default", created_by="", i
         page_title=page_title,
         is_home=False
     )
+    if is_home:
+        page.is_home = True
+
+    page.application_namespace = app_hook.namespace
+    page.application_urls = "Blog"
+    page.application_configs = 1
+    page.save()
+

@@ -4,6 +4,8 @@
 
 ## Default Content : setup_content_server.py
 
+You can leave all the options to true to start the application
+
 In default_site.py we store some data we can use during installation:
 
 ```
@@ -130,25 +132,3 @@ under `site_server/management/commands` in `initialize_cms.py`
 
 ```
 
-Again this is for convenience. We can add default content and site settings during installation.
-
-```
-    # scrape the web
-    add_web_content = True
-
-```
-
-In the `site_server/management/commands` folder in `search_web.py`
-
-```            
-        # to search
-        queries = [
-            "science supernovae news 2020",
-            "science Python Programming news 2020",
-            "science evolution and paleontology 2020",
-            "science rockets elon musk 2020",
-            "science abiogenesis 2020",
-        ]
-```
-
-Added this to start scraping content. There is so much, lets use it.

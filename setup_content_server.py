@@ -4,17 +4,10 @@ import glob
 import os
 import shutil
 from datetime import datetime
-from django.conf import settings
-import django
-
-# Initialise django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "site_server.settings")
-django.setup()
 
 # timestamp used
 timestamp = str(datetime.now()).replace(" ", "")
-# Get name from settings
-database = getattr(settings, 'DATABASE_NAME')
+
 # Edit these details for you use cas
 superuser = 'developer'
 superuser_email = 'django.python.pro@gmail.com'
@@ -27,20 +20,18 @@ def setup_server():
     runserver = False
     # Do you need to migrate the database? Safer to leave True
     # if you have changed models it must be True
-    migrate = False
+    migrate = True
     # Do you need to backup the database? Safer to leave True (We are using sqlight)
     backup = False
     # How many as in how many copies since script is run.
     no_backups = 1
     # Get pip involved?
-    install_requirements = False
+    install_requirements = True
     # This deletes the database creating a reset copy on the last database
     # Use wisely...
     reset = True
     # This runs the custom script in site_server/management initialize_cms.py
     add_default_content = True
-    # scrape the web
-    add_web_content = True
 
     """
     No need to edit anything further down unless you are expanding
@@ -49,6 +40,19 @@ def setup_server():
     if install_requirements:
         # Its a large application might take time
         os.system("pip install -r requirements.txt")
+
+    try:
+        from django.conf import settings
+        import django
+
+        # Initialise django
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "site_server.settings")
+        django.setup()
+        # Get name from settings
+        database = getattr(settings, 'DATABASE_NAME')
+    except ImportError as error:
+        os.system('{}'.format(error))
+        exit("Please make sure install_requirements = True. Requirements need to be installed")
 
     # NB development only
     if reset:
@@ -96,14 +100,6 @@ def setup_server():
         # Adds image options and some blogs for display.
         # Can be used to add more content
         os.system("python3 manage.py initialize_cms")
-
-    if add_web_content:
-        # We are now going to search the web to try add content
-        os.system("python3 manage.py search_web")
-        # Lets process that content
-        # Can be run separately to update BlogPosts
-        #os.system("python3 manage.py process_search_web_results")
-        pass
 
     # Run this baby?
     if runserver:

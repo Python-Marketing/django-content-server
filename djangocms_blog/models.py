@@ -495,6 +495,7 @@ class Post(KnockerModel, BlogMetaMixin, TranslatableModel):
                 return gallery[0].image
         return False
 
+
 class BasePostPlugin(CMSPlugin):
     app_config = AppHookConfigField(
         BlogConfig, null=True, verbose_name=_('app. config'), blank=True
