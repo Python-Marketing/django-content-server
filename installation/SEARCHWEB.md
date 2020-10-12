@@ -6,16 +6,11 @@
 ### NB : This removes any content on the site
 Just wanted some good images to test against
 
-run `python3 manage.py search_web`
-
-
-
-Ok hard work done
 
 run `python3 manage.py process_search_web_results`
 
 
-This will process the following query and populate the site.
+## This will process the following query and populate the site.
 
 
 ```

@@ -18,13 +18,6 @@ some reviews :
 
 [What is Django? Advantages and Disadvantages](https://hackr.io/blog/what-is-django-advantages-and-disadvantages-of-using-django)
 
-### Social User Management
-
-* Django All Auth : [Read me](allauth) - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
-
-### Secure
-
-* Secure - [Read More](https://docs.djangoproject.com/en/3.1/topics/security/)
 
 ### Content management
 
@@ -32,11 +25,11 @@ We can scrape content from the web or design it before hand.
 
 Updating the same way, lets work smarter not harder.
 
-* Setup script :  [Readme](installation/SETUPSCRIPT.md) setup_content_server.py
+### Setup script :  [Readme](installation/SETUPSCRIPT.md) setup_content_server.py
 
 This adds 3 blogs to a page automatically
 
-* Web Content :  [Readme](installation/SEARCHWEB.md) `python3 manage.py search_web`
+### Web Content :  [Readme](installation/SEARCHWEB.md) `python3 manage.py search_web`
 
 Added web scraping capabilities. 
 
@@ -68,6 +61,13 @@ By default allows some amazing editing functionality.
 
 To help simplify the site requirements
 
+### Social User Management
+
+* Django All Auth : [Read me](allauth) - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
+
+### Secure
+
+* Secure - [Read More](https://docs.djangoproject.com/en/3.1/topics/security/)
 
 ### NB still in development
 
