@@ -110,5 +110,7 @@ Read through the script its self explanatory. You can adapt it to so almost anyt
 
 # Lastly
 
+press `ctrl+c` to cancel runserver then...
+
 Run `python manange.py process_search_web_results`
 
