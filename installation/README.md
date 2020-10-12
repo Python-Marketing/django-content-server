@@ -102,7 +102,7 @@ The username and password are in `setup_content_server.py`
 
 ![Page](green.jpg)
 
-## Ok hard work done
+## Moving on
 
 Read through the script its self explanatory. You can adapt it to so almost anything.
 
