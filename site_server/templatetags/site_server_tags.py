@@ -19,29 +19,17 @@ def query_lookup(query='', filter=[], pages=[]):
 
 @register.simple_tag
 def query_filter(request, query={}, value='', random=False, number=False):
-    pages = [
-        "Home", "Projects", "News", "Gallery", "Videos", "About", "Contact", "Events"
-    ]
-
-    request.session['used_blogs'] = "Value"
 
     values = value.split(',')
-    results = query_lookup(query, values, pages)
+    search = Q()
+    for value in values:
+        search.add(Q(translations__title__icontains=value), Q.OR)
 
-    if len(results) == 0:
-        search = Q()
-        for value in values:
-            search.add(Q(translations__title__icontains=value), Q.OR)
-
-        query = Post.objects.filter(search).exclude(main_image__isnull=True).exclude(publish=False)
-        results = query_lookup(query, values)
+    query = Post.objects.filter(search).exclude(publish=False).exclude(main_image__isnull=True)
+    results = query_lookup(query, values)
 
     if number:
         return results[0]
-
-    # if len(results) == 1:
-    #     if value not in pages:
-    #         return results[0]
 
     if random:
         try:

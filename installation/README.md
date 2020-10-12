@@ -56,7 +56,7 @@ To activate the virtual env
 
 Run the script :
 
-`python3 installation/setup_content_server.py`
+`python3 setup_content_server.py`
 
 #### You will run this script repeatedly until installation process is complete.
 

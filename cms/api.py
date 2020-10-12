@@ -108,7 +108,7 @@ def create_page(title, template, language, menu_title=None, slug=None,
                 navigation_extenders=None, published=False, site=None,
                 login_required=False, limit_visibility_in_menu=constants.VISIBILITY_ALL,
                 position="last-child", overwrite_url=None,
-                xframe_options=Page.X_FRAME_OPTIONS_INHERIT, page_title=None):
+                xframe_options=Page.X_FRAME_OPTIONS_INHERIT, page_title=None, is_home=False):
     """
     Create a CMS Page and it's title for the given language
 
@@ -186,6 +186,7 @@ def create_page(title, template, language, menu_title=None, slug=None,
         login_required=login_required,
         limit_visibility_in_menu=limit_visibility_in_menu,
         xframe_options=xframe_options,
+        is_home=is_home
     )
     page.set_tree_node(site=site, target=target_node, position=position)
     page.save()
