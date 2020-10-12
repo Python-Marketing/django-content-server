@@ -114,3 +114,8 @@ press `ctrl+c` to cancel runserver then...
 
 Run `python manange.py process_search_web_results`
 
+When that's done
+
+Run `python manange.py runserver ip:9000`
+
+NB you can edit `setup_content_server.py` and change all the checks to False except for runserver...
