@@ -43,7 +43,7 @@ class Command(BaseCommand):
             create_new_page(self, title=page, description=terms, is_home=is_home)
             n += 1
             try:
-                for j in search(terms, tld="co.in", num=20, stop=20, pause=0):
+                for j in search(terms, tld="co.in", num=13, stop=13, pause=0):
                     self.stdout.write(j)
                     domain = j.split("://")[1].split("/")[0]
 
@@ -79,10 +79,4 @@ class Command(BaseCommand):
                 self.stdout.write(str(sys.exc_info()))
                 self.stdout.write("error {}".format(terms))
 
-        self.stdout.write("Bug in code : http://127.0.0.1:9000/admin/cms/page/")
-        self.stdout.write("Please use the above url to add the blog config to the page")
-        self.stdout.write("Please edit each page and manually add the Application Blog under Advanced Settings")
-        self.stdout.write("Each page has an equivalent Application Configuration")
-        self.stdout.write("To finish installation please run : After completing the above instructions")
-        self.stdout.write("python manage.py process_search_web_results ")
         self.stdout.write("Site nearly ready, one more step.")
