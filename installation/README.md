@@ -72,6 +72,37 @@ Errors will hint at you what ubuntu packages are needed.
 
 ### Usually copy the error and google it. 
 
+### After this we need to configure the new pages created.
+
+Log into the admin section http://127.0.0.1:9000/admin/cms/page/
+
+The username and password are in `setup_content_server.py`
+
+![Page](edit_page.jpg)
+
+### Find the advanced options
+
+![Page](advanced.jpg)
+
+![Page](advanced2.jpg)
+
+### Find the Application option
+
+![Page](application.jpg)
+
+### And change it then save the Page
+
+![Page](application2.jpg)
+
+### Publish Changes, hover over the blue dot then click publish
+
+![Page](application3.jpg)
+
+### Green is good
+
+![Page](green.jpg)
+
+## Ok hard work done
 
 Read through the script its self explanatory. You can adapt it to so almost anything.
 
