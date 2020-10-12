@@ -50,5 +50,5 @@ def create_new_page(self, title="Blank", description="Default", created_by="", i
         site=site,
         xframe_options=xframe_options,
         page_title=page_title,
-        is_home=is_home
+        is_home=False
     )

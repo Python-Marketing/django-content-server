@@ -4,14 +4,17 @@
 
 {% if banner %}
 
-
+{% if banner.get_gallery_image %}
+    {% thumbnail banner.get_gallery_image 800x600 as image %}
+    <div class="project-image cover" style="background-image: url({{ image.url }});">
+{% else %}
     {% if banner.main_image %}
         {% thumbnail banner.main_image 800x600 as image %}
         <section class="header-section-1 bg-image-1 header-js" id="header" style="background-image: url({{ image.url }});">
     {% else %}
         <section class="header-section-1 bg-image-1 header-js" id="header" style="background-image: url({{ static_base }}images/{% random_background %});">
     {% endif %}
-
+{% endif %}
         <div class="overlay-color">
             <div class="container">
                 <div class="row section-separator">

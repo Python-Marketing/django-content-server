@@ -32,9 +32,9 @@ class Command(BaseCommand):
             "Python": "Jobs Python Cape Town",
         }
         from cms.models import Page
-        default_pages = Page.objects.all().delete()
-        default_titles = Title.objects.all().delete()
-        default_configs = BlogConfig.objects.all().delete()
+        #default_pages = Page.objects.all().delete()
+        #default_titles = Title.objects.all().delete()
+        #default_configs = BlogConfig.objects.all().delete()
         n = 0
         for page, terms in queries.items():
             if n == 0:

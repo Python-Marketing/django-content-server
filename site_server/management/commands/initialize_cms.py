@@ -29,7 +29,7 @@ class Command(BaseCommand):
                     width=item['width'],
                     height=item['height'],
                     crop=False,
-                    upscale=True
+                    upscale=False
                 ).save()
 
         # Adding the default blog content
