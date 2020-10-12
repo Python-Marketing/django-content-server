@@ -38,7 +38,8 @@ class Command(BaseCommand):
         n = 0
         for page, terms in queries.items():
             is_home = False
-            if n == 0:is_home=True
+            if n == 0:
+                is_home = True
             create_new_page(self, title=page, description=terms, is_home=is_home)
             n += 1
             try:
