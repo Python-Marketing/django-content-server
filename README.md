@@ -18,13 +18,6 @@ some reviews :
 
 [What is Django? Advantages and Disadvantages](https://hackr.io/blog/what-is-django-advantages-and-disadvantages-of-using-django)
 
-### Social User Management
-
-* Django All Auth : [Read me](allauth) - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
-
-### Secure
-
-* Secure - [Read More](https://docs.djangoproject.com/en/3.1/topics/security/)
 
 ### Content management
 
@@ -68,6 +61,13 @@ By default allows some amazing editing functionality.
 
 To help simplify the site requirements
 
+### Social User Management
+
+* Django All Auth : [Read me](allauth) - [Documentation](https://django-allauth.readthedocs.io/en/latest/)
+
+### Secure
+
+* Secure - [Read More](https://docs.djangoproject.com/en/3.1/topics/security/)
 
 ### NB still in development
 
