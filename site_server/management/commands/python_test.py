@@ -43,7 +43,7 @@ class Command(BaseCommand):
                     validate_email(email)
                 except:
                     '''On exception remove from list'''
-                    emails.remove(email)
+                    email_list.remove(email)
             '''Return the sorted list'''
             return sorted(email_list, key=str.lower)
 
