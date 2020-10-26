@@ -103,7 +103,7 @@ print(str(palindrome))
 
 ```
 
-# Question 6
+#### Question 6
 In Django backend, how can you limit admin access so that the objects can only be edited by those users who have created them?
 
 
@@ -135,7 +135,7 @@ def user_edit_object(request):
 ```
 
 
-# Question 7
+#### Question 7
 How do you set/unset a session in django views?
 ```
 # Setting the session variable
