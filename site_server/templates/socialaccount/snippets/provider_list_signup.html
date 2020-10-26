@@ -1,0 +1,44 @@
+{% load socialaccount %}
+
+{% comment %}
+{% get_providers as socialaccount_providers %}
+
+{% for provider in socialaccount_providers %}
+{% if provider.id == "openid" %}
+{% for brand in provider.get_brands %}
+<div>
+  <a title="{{brand.name}}"
+     class="socialaccount_provider {{provider.id}} {{brand.id}}"
+     href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
+     >{{brand.name}}</a>
+</div>
+{% endfor %}
+{% endif %}
+<div>
+  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
+     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.name}}</a>
+</div>
+
+{% endfor %}
+
+{% endcomment %}
+
+
+<div class="row social-links">
+<ul class="nav mx-auto">
+  <li class="nav-item">
+      <a class="nav-link" href='{% provider_login_url "facebook" next=bla %}'>
+          <img src="/static/social/img/facebook.png" alt=""></a>
+  </li>
+
+  <li class="nav-item">
+      <a style="pointer:cursor;" class="nav-link" href='{% provider_login_url "google" next=bla %}'>
+          <img src="/static/social/img/google-plus.png" alt=""></a>
+  </li>
+
+  <li class="nav-item">
+      <a class="nav-link" href='{% provider_login_url "linkedin_oauth2" next=bla %}'>
+          <img src="/static/social/img/linkedin.png" alt=""></a>
+  </li>
+</ul>
+</div>

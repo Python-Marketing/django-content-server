@@ -59,3 +59,5 @@ beautifulsoup4
 ordereddict
 # Not using right now
 #Google-Images-Search
+python-daemon
+psutil

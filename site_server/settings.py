@@ -227,9 +227,13 @@ CMS_LANGUAGES = {
     },
 }
 
+
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 1000000000
+
 # Default template used
 CMS_TEMPLATES = (
-    ('starton/home.html', 'Start'),
+    # ('starton/home.html', 'Start'),
+    ('dashboard/home.html', 'Dashboard'),
     #('newsbit/home.html', 'Newsbit'),
 )
 

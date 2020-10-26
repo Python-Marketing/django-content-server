@@ -18,9 +18,20 @@ from cms.models import Page, reverse
 from djangocms_blog.models import Post
 from invoicing.models import Invoice
 from tracker.models import Story, Developer, Task
-from .models import Post as ApiPost, Donation, Volunteer
+from .models import Post as ApiPost, Donation, Volunteer, BeautifulGumtreeQuery, GumtreeLocation, GumtreeProvince, \
+    GumtreeCategory, GumtreeCategoryLabel
 from .serializer import UserSerializer, PageSerializer, PostSerializer
+from django.template.loader import get_template
+from django.template import Context
 
+
+def add_gumtree_query(request):
+
+   template = get_template("dashboard/add_gumtree_query.html")
+   html = template.render({
+       'request': request
+   })
+   return HttpResponse(html)
 
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):
@@ -73,6 +84,41 @@ class DonateView(View):
                 response = 'Thank you ' + response + ' success'
 
         return HttpResponse(format_html(response), content_type='text/html', status=200)
+
+
+class AddGumtreeQuery(View):
+    def get(self, *args, **kwargs):
+        user = self.request.user
+        response = "No entry"
+
+        return HttpResponse(format_html(response), content_type='text/html', status=200)
+
+    def post(self, *args, **kwargs):
+        user = self.request.user
+        response = "No entry"
+
+        if not user.is_authenticated:
+            return HttpResponse(format_html(response), content_type='text/html', status=400)
+
+        label = self.request.POST.get('label')
+        province = self.request.POST.get('province')
+        terms = self.request.POST.get('term')
+        location = [loc for loc in self.request.POST.getlist('location[]') if loc]
+        category = [cat for cat in self.request.POST.getlist('category[]') if cat]
+
+        query = BeautifulGumtreeQuery()
+        query.term = terms
+        query.label_id = GumtreeCategoryLabel.objects.get(link=label).id
+        query.province_id = GumtreeProvince.objects.get(link=province).id
+        query.save()
+        query.label = GumtreeCategoryLabel.objects.get(link=label)
+        locations = GumtreeLocation.objects.filter(id__in=location)
+        category = GumtreeCategory.objects.filter(id__in=category)
+        query.location.set(locations)
+        query.category.set(category)
+
+
+        return HttpResponse(format_html(str(response)), content_type='text/html', status=200)
 
 
 class VolunteerAjax(View):

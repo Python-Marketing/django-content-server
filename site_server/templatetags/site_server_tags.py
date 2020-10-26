@@ -1,11 +1,22 @@
 from django import template
 from django.utils.html import format_html
 
+from api.models import BeautifulGumtreeQuery, GumtreeLocation, GumtreeProvince, GumtreeCategory, GumtreeCategoryLabel
 from cms.models import Q
 from djangocms_blog.models import Post
 from tracker.models import Story
 
 register = template.Library()
+
+
+@register.simple_tag
+def get_location_results_count(query, location):
+    return query.get_results_by_location_count(location)
+
+
+@register.simple_tag
+def get_category_results_count(query, category):
+    return query.get_results_by_category_count(category)
 
 
 def query_lookup(query='', filter=[], pages=[]):
@@ -15,6 +26,56 @@ def query_lookup(query='', filter=[], pages=[]):
             if q.title.find(v) != -1 and v not in pages:
                 results.append(q)
     return results
+
+
+@register.simple_tag
+def search_locations(request):
+    locations = GumtreeLocation.objects.filter(parent__isnull=False).order_by('name').exclude(parent__name="South Africa")
+    select = '<option>Please Select</option>'
+    for l in locations:
+        select += "<option class='{} {}' value='{}'>{}</option>".format(str(l.province.link).replace('+', '-'),str(l.parent.link).replace('+', '-'), l.id, l.name)
+    return select
+
+
+@register.simple_tag
+def search_provinces(request):
+    province = GumtreeProvince.objects.all()
+    select = '<option>Please Select</option>'
+    for p in province:
+        select += "<option value='{}'>{}</option>".format(p.link, p.name)
+    return select
+
+
+@register.simple_tag
+def search_categories(request):
+    categories = GumtreeCategory.objects.all()
+    select = '<option>Please Select</option>'
+    for c in categories:
+        select += "<option style='display:none;' class='{}' value='{}'>{}</option>".format(c.label.link, c.id, c.name)
+    return select
+
+
+@register.simple_tag
+def search_areas(request):
+    locations = GumtreeLocation.objects.filter(parent__isnull=True).order_by('name').exclude(parent__name="South Africa")
+    select = '<option>Please Select</option>'
+    for l in locations:
+        select += "<option class='{} {}' value='{}'>{}</option>".format(str(l.province.link).replace('+', '-'), l.link, l.link, l.name)
+    return select
+
+
+@register.simple_tag
+def search_label(request):
+    labels = GumtreeCategoryLabel.objects.all()
+    select = '<option>Please Select</option>'
+    for l in labels:
+        select += "<option value='{}'>{}</option>".format(l.link, l.name)
+    return select
+
+
+@register.simple_tag
+def gumtree_query(request):
+    return BeautifulGumtreeQuery.objects.all()
 
 
 @register.simple_tag

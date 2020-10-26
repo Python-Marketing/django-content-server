@@ -3,13 +3,13 @@ import sys
 # This will create a page with the settings in default_site.py
 import requests
 from bs4 import BeautifulSoup
-from cms.models import Title
 from django.core.management.base import BaseCommand
 
-from api.models import AllowedDomain, BeautifulGoogleSearch, BeautifulGoogleResult
+from api.models import AllowedDomain, BeautifulGoogleSearch
 from api.utils.page import create_new_page
 from djangocms_blog.cms_appconfig import BlogConfig
 from djangocms_blog.models import Post as BlogPost
+
 
 class Command(BaseCommand):
 

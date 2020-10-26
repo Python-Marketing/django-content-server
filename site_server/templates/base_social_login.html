@@ -1,0 +1,56 @@
+{% load cms_tags menu_tags sekizai_tags %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% page_attribute page_title %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% addtoblock "css" %}
+    <link rel="stylesheet" href="/static/social/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/social/css/style.css" type="text/css">
+    {% endaddtoblock %}
+    {% render_block "css" %}
+
+
+
+
+  </head>
+  <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Humberger Menu Begin -->
+    <div class="humberger-menu-overlay"></div>
+    <div class="signup-section">
+
+        <div class="signup-text">
+            <div class="container">
+                        {% block content%}
+                        {% endblock%}
+
+            </div>
+        </div>
+    </div>
+
+
+
+  </body>
+
+{% addtoblock "js" %}
+    <script src="/static/social/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/social/js/main.js"></script>
+
+
+    <script>
+        $( document ).ready(function() {
+            $('.signup-section').show();
+        });
+    </script>
+{% endaddtoblock %}
+
+
+{% render_block "js" %}
+</html>

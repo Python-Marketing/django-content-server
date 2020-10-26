@@ -1,0 +1,30 @@
+{% extends "base_social_login.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<div class="signup-title">
+<h2>{% trans "Sign In" %}</h2>
+
+{% get_providers as socialaccount_providers %}
+
+{% if socialaccount_providers %}
+<p>{% blocktrans with site.name as site_name %}Please sign in with one
+of your existing third party accounts to donate :{% endblocktrans %}</p>
+
+    {% include "socialaccount/snippets/provider_list_signup.html" with process="login" %}
+
+
+</div>
+
+
+
+{% else %}
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load cms_tags %}
+{% load djangocms_blog i18n easy_thumbnails_tags cms_tags site_server_tags %}
+{% with '/static/' as static_base %}
+{% load  sekizai_tags %}
+{% load i18n %}
+<div id="layoutSidenav_content">
+	<main>
+
+
+
+		<div class="container-fluid">
+			<h1 class="mt-4">Dashboard</h1>
+			<ol class="breadcrumb mb-4">
+				<li class="breadcrumb-item active">Dashboard</li>
+			</ol>
+
+			{% comment %}{% include 'dashboard/chart.html' %}{% endcomment %}
+			{% gumtree_query request as query %}
+			{% include 'dashboard/query_list.html' with query=query %}
+
+		</div>
+	</main>
+	<footer class="py-4 bg-light mt-auto">
+		<div class="container-fluid">
+			<div class="d-flex align-items-center justify-content-between small">
+				<div class="text-muted">Copyright &copy; Your Website 2020</div>
+				<div>
+					<a href="#">Privacy Policy</a>
+					&middot;
+					<a href="#">Terms &amp; Conditions</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+{% endwith %}

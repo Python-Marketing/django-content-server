@@ -9,9 +9,10 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import include, re_path
 from django.views.static import serve
 
+import api
 from allauth import urls as socialmarket
 from api.urls import router
-from api.views import SocialLoginView, DonateView, VolunteerAjax, ContactAjax, RecordAudioAjax
+from api.views import SocialLoginView, DonateView, VolunteerAjax, ContactAjax, RecordAudioAjax, AddGumtreeQuery
 from cms.sitemaps import CMSSitemap
 
 '''
@@ -32,7 +33,9 @@ urlpatterns += [
        url(r'^api/volunteer/', VolunteerAjax.as_view()),
        url(r'^api/contact/', ContactAjax.as_view()),
        url(r'^api/audio/', RecordAudioAjax.as_view()),
+       url(r'^api/add-gumtree-query/', AddGumtreeQuery.as_view()),
        url(r'^api/', include(router.urls)),
+       url(r'^api/add_gumtree_query/', api.views.add_gumtree_query),
        url(r'^api-auth/', include('rest_framework.urls')),
        # Django admin and favicons
        url(r'^admin/', admin.site.urls),
