@@ -10,63 +10,6 @@ from django.core.validators import validate_email
 path = os.path.abspath(os.getcwd()) + "/site_server/management/commands/"
 
 
-def valid_emails(emails):
-    """Question 1"""
-    """ Loop though and validate the emails"""
-    for email in emails:
-        try:
-            validate_email(email)
-        except:
-            '''On exception remove from list'''
-            emails.remove(email)
-    '''Return the sorted list'''
-    return sorted(emails, key=str.lower)
-
-
-def maximum_depth(self, xml=False, level=-1, max_depth=0):
-    if xml:
-        xml_root = xml.getroot()
-    else:
-        xml_root = {}
-
-    """function to get the maxdepth"""
-    if level == max_depth:
-        max_depth += 1
-        '''
-        Being recursive it was hard to get at the variable value
-        
-        So I used self to pass the anser back
-        '''
-        self.max_depth = max_depth
-
-    # recursive call to function to get the depth
-    for child in xml_root:
-        maximum_depth(self, child, level + 1, max_depth)
-
-
-def computed_hash(input_string):
-    t = tuple(input_string.split(' '))
-    return hash(t)
-
-
-def people(persons):
-    """Simple sort by the age"""
-    sorted_list = sorted(persons, key=lambda k: k['age'])
-    return sorted_list
-
-
-def palindrome_integer(string):
-    """Split string and loop"""
-    integers = string.split(" ")
-    for integer in integers:
-        reverse = str(int)[::-1]
-        '''Check if palindrome then return False'''
-        if integer != reverse:
-            return False
-
-    return True
-
-
 class Command(BaseCommand):
 
     def __init__(self):
@@ -91,6 +34,19 @@ class Command(BaseCommand):
             for row in reader:
                 emails.append(row['email'])
 
+        '''Test function'''
+        def valid_emails(email_list=[]):
+            """Question 1"""
+            """ Loop though and validate the emails"""
+            for email in email_list:
+                try:
+                    validate_email(email)
+                except:
+                    '''On exception remove from list'''
+                    emails.remove(email)
+            '''Return the sorted list'''
+            return sorted(email_list, key=str.lower)
+
         '''Run the function'''
         lexicographical_order = valid_emails(emails)
         self.stdout.write(str(lexicographical_order))
@@ -102,6 +58,28 @@ class Command(BaseCommand):
         '''Filename added to path for brevity'''
         file = path + 'test.xml'
         xml = ET.parse(file)
+
+        '''Test function'''
+        def maximum_depth(self, xml=False, level=-1, max_depth=0):
+            if xml:
+                xml_root = xml.getroot()
+            else:
+                xml_root = {}
+
+            """function to get the maxdepth"""
+            if level == max_depth:
+                max_depth += 1
+                '''
+                Being recursive it was hard to get at the variable value
+
+                So I used self to pass the anser back
+                '''
+                self.max_depth = max_depth
+
+            # recursive call to function to get the depth
+            for child in xml_root:
+                maximum_depth(self, child, level + 1, max_depth)
+
         '''Run the function'''
         '''Used self.max_depth to store data'''
         maximum_depth(xml)
@@ -112,7 +90,13 @@ class Command(BaseCommand):
         # Given a n space-separated integers as input, create a tuple t, of those n integers.
         # Then compute and print the result of hash(t).
         input_string = '1 2'
-        '''Nice and simple'''
+
+        '''Test function'''
+        def computed_hash(input_string):
+            t = tuple(input_string.split(' '))
+            return hash(t)
+
+        '''Run the function'''
         hashed_integer = computed_hash(input_string)
         '''Display the output'''
         self.stdout.write(str(hashed_integer))
@@ -122,6 +106,7 @@ class Command(BaseCommand):
         # first name, last name, age and sex. Print their names in a specific format sorted by
         # their age in ascending order i.e. the youngest person&#39;s name should be printed first.
         # For two people of the same age, print them in the order of their input.
+
         '''Filename added to path for brevity'''
         file = path + 'persons.csv'
 
@@ -134,7 +119,13 @@ class Command(BaseCommand):
             for dct in reader:
                 people_list.append(dict(dct))
 
-        # Lets use the list to get the order we need
+        '''Test function'''
+        def people(persons):
+            """Simple sort by the age"""
+            sorted_list = sorted(persons, key=lambda k: k['age'])
+            return sorted_list
+
+        '''Run the function'''
         sorted_people = people(people_list)
         '''Display the output'''
         self.stdout.write(str(sorted_people))
@@ -143,7 +134,18 @@ class Command(BaseCommand):
         # You are given a space separated list of integers. If all the integers are positive,
         # then you need to check if any integer is a palindromic integer, i.e. the integer if
         # reversed does not change its value, e.g. 121 is a palindrom integer.
-        input_string = '121 121'
+        '''Test function'''
+        def palindrome_integer(string):
+            """Split string and loop"""
+            integers = string.split(" ")
+            for integer in integers:
+                reverse = str(int)[::-1]
+                '''Check if palindrome then return False'''
+                if integer != reverse:
+                    return False
+            return True
+
+        input_string = '121 12'
         '''Check the string for palindrome'''
         palindrome = palindrome_integer(input_string)
         '''Display the output'''
