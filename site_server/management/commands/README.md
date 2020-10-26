@@ -1,6 +1,6 @@
 # Python Django Test
 
-### Please not this is a simplified version
+### Please note this is a simplified version
 
 Code [Source](https://github.com/Python-Marketing/django-content-server/blob/master/site_server/management/commands/python_test.py)
 
