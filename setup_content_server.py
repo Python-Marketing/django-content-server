@@ -17,7 +17,7 @@ superuser_password = 'password'
 def setup_server():
     # Setup the django handling
     # only use this if not using Pycharm or another way of running the server
-    runserver = True
+    runserver = False
     # Do you need to migrate the database? Safer to leave True
     # if you have changed models it must be True
     migrate = True
@@ -31,9 +31,9 @@ def setup_server():
     # Use wisely...
     reset = True
     # This runs the custom script in site_server/management initialize_cms.py
-    add_default_content = True
+    add_default_content = False
 
-    add_web_content = True
+    add_web_content = False
 
     """
     No need to edit anything further down unless you are expanding

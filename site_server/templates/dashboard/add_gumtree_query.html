@@ -1,0 +1,52 @@
+{% load cms_tags %}
+{% load djangocms_blog i18n easy_thumbnails_tags cms_tags site_server_tags %}
+{% with '/static/dashboard/' as static_base %}
+
+
+<form id="query-form" action="/api/add-gumtree-query/">
+
+    {% search_label request as options %}
+    <select style="width:100%;" id="label" class="" onchange="select_category();">
+        {{ options|safe }}
+    </select>
+
+
+        <div class="input-group">
+
+
+            {% search_categories request as options %}
+            <select style="width:100%;height:300px;" id="category" multiple class="mdb-select colorful-select dropdown-primary md-form">
+                {{ options|safe }}
+            </select>
+
+            {% search_provinces request as options %}
+            <select onchange="select_location();" style="width:100%;" id="province" class="mdb-select colorful-select dropdown-primary md-form">
+                {{ options|safe }}
+            </select>
+
+            {% search_areas request as options %}
+            <select onchange="select_area_locations();" style="width:100%;height:300px;" id="area" multiple class="mdb-select colorful-select dropdown-primary md-form">
+                {{ options|safe }}
+            </select>
+
+
+            {% search_locations request as options %}
+            <select style="width:100%;height:300px;" id="location" multiple class="mdb-select colorful-select dropdown-primary md-form">
+                {{ options|safe }}
+            </select>
+
+            <input style="width:100%;" id="term" class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+
+
+            <div class="input-group-append">
+                <button onclick="add_gumtree_query();" class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+
+        </div>
+
+
+
+    </form>
+
+
+{% endwith %}

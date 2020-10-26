@@ -1,0 +1,53 @@
+{% load cms_tags sekizai_tags %}
+{% load i18n easy_thumbnails_tags cms_tags site_server_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% query_filter request post_list '' True 0 as banner %}
+    <title>
+        {% block title %}{{ banner.get_title }}{% endblock title %}
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% addtoblock "css" %}
+      {% with '/static/dashboard/' as css_base %}
+
+        <link href="{{ css_base }}css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+
+      {% endwith %}
+    {% endaddtoblock %}
+
+    {% render_block "css" %}
+  </head>
+  <body>
+    {% cms_toolbar %}
+
+    {% include 'dashboard/nav.html' %}
+    <div id="layoutSidenav">
+    {% include 'dashboard/side_nav.html' %}
+
+    {% include 'dashboard/dashboard.html' %}
+    </div>
+    {% addtoblock "js" %}
+    {% with '/static/dashboard/' as js_base %}
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{{ js_base }}js/scripts.js"></script>
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>-->
+<!--        <script src="{{ js_base }}assets/demo/chart-area-demo.js"></script>-->
+<!--        <script src="{{ js_base }}assets/demo/chart-bar-demo.js"></script>-->
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="{{ js_base }}assets/demo/datatables-demo.js"></script>
+    {% endwith %}
+
+  {% include 'dashboard/custom_scripts.js' %}
+  {% endaddtoblock %}
+
+  {% render_block "js" %}
+  </body>
+</html>

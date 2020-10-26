@@ -1,0 +1,75 @@
+{% load cms_tags %}
+{% load djangocms_blog i18n easy_thumbnails_tags cms_tags site_server_tags %}
+{% with '/static/dashboard/' as static_base %}
+
+<div class="card mb-4">
+
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        DataTable Example
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Term</th>
+                        <th>Label</th>
+                        <th>category</th>
+                        <th>province</th>
+                        <th>location</th>
+                        <th>Results</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Term</th>
+                        <th>Label</th>
+                        <th>category</th>
+                        <th>province</th>
+                        <th>location</th>
+                        <th>Results</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+
+                    {% for q in query %}
+                    <tr>
+                        <td>{{q.term}}</td>
+                        <td>{{q.label}}</td>
+                        <td>
+                            <ul>
+                                {% for cat in q.category.all %}
+                                {% get_category_results_count q cat as count%}
+                                {% ifequal count 0 %}
+                                {% else %}
+                                    <li>{{ cat }} - {{ count }}</li>
+                                {% endifequal %}
+
+                                {% endfor  %}
+                            </ul>
+                        </td>
+                        <td>{{q.province}}</td>
+                        <td>
+                            <ul>
+                                {% for loc in q.location.all %}
+                                {% get_location_results_count q loc as count%}
+                                {% ifequal count 0 %}
+                                {% else %}
+                                    <li>{{ loc }} - {{ count }}</li>
+                                {% endifequal %}
+
+                                {% endfor  %}
+                            </ul>
+                        </td>
+                        <td>{{ q.get_results_count }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endwith %}
