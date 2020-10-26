@@ -36,7 +36,6 @@ class Command(BaseCommand):
         '''Test function'''
 
         def valid_emails(email_list=[]):
-            """Question 1"""
             """ Loop though and validate the emails"""
             for email in email_list:
                 try:
