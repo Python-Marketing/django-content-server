@@ -2,7 +2,6 @@ import csv
 import os
 import xml.etree.ElementTree as ET
 
-
 from django.core.management.base import BaseCommand
 from django.core.validators import validate_email
 
@@ -35,6 +34,7 @@ class Command(BaseCommand):
                 emails.append(row['email'])
 
         '''Test function'''
+
         def valid_emails(email_list=[]):
             """Question 1"""
             """ Loop though and validate the emails"""
@@ -60,6 +60,7 @@ class Command(BaseCommand):
         xml = ET.parse(file)
 
         '''Test function'''
+
         def maximum_depth(self, xml=False, level=-1, max_depth=0):
             if xml:
                 xml_root = xml.getroot()
@@ -92,6 +93,7 @@ class Command(BaseCommand):
         input_string = '1 2'
 
         '''Test function'''
+
         def computed_hash(input_string):
             t = tuple(input_string.split(' '))
             return hash(t)
@@ -120,6 +122,7 @@ class Command(BaseCommand):
                 people_list.append(dict(dct))
 
         '''Test function'''
+
         def people(persons):
             """Simple sort by the age"""
             sorted_list = sorted(persons, key=lambda k: k['age'])
@@ -135,12 +138,13 @@ class Command(BaseCommand):
         # then you need to check if any integer is a palindromic integer, i.e. the integer if
         # reversed does not change its value, e.g. 121 is a palindrom integer.
         '''Test function'''
+
         def palindrome_integer(string):
             """Split string and loop"""
             integers = string.split(" ")
             for integer in integers:
                 reverse = str(int)[::-1]
-                '''Check if palindrome then return False'''
+                '''Check if palindrome not then return False'''
                 if integer != reverse:
                     return False
             return True
@@ -170,6 +174,7 @@ class Command(BaseCommand):
         def user_edit_object(request):
             if not request.user.has_perm('auth.edit_object'):
                 raise PermissionDenied()
+
         '''
         3.
         Or use the decorator
