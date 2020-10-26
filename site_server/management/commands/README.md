@@ -4,7 +4,7 @@
 
 Code [Source](python_test.py)
 
-The link above to to the working code
+The link above is to the working code
 
 
 #### Question 1
