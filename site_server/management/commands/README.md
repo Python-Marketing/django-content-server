@@ -2,7 +2,7 @@
 
 ### Please note this is a simplified version
 
-Code [Source](https://github.com/Python-Marketing/django-content-server/blob/master/site_server/management/commands/python_test.py)
+Code [Source](python_test.py)
 
 The link above to to the working code
 
@@ -10,6 +10,8 @@ The link above to to the working code
 #### Question 1
 You are given an integer followed by n email addresses in a text file. Your task is to print a list containing only valid email addresses in lexicographical order.
 
+
+Email list [Source](emails.csv)
 ```
 Answer
 def valid_emails(email_list=[]):
@@ -27,6 +29,7 @@ lexicographical_order = valid_emails(emails)
 #### Question 2
 You are given a valid XML document, and you have to print the maximum level of nesting in it. Take the depth of the root as 0. Output a single line, the integer value of the maximum level of nesting in the XML document.
 
+XML [Source](test.xml)
 ```
 def maximum_depth(self, xml=False, level=-1, max_depth=0):
     if xml:
@@ -71,6 +74,8 @@ print(str(hashed_integer))
 
 #### Question 4
 You are given some information about N people in a text file. Each person has a first name, last name, age and sex. Print their names in a specific format sorted by their age in ascending order i.e. the youngest person&#39;s name should be printed first. For two people of the same age, print them in the order of their input.
+
+Person [Source](persons.csv)
 
 ```
 def people(persons):
