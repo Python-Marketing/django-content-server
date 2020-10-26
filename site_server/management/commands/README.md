@@ -14,6 +14,9 @@ You are given an integer followed by n email addresses in a text file. Your task
 Email list [Source](emails.csv)
 ```
 Answer
+
+from django.core.validators import validate_email
+
 def valid_emails(email_list=[]):
     for email in email_list:
         try:
