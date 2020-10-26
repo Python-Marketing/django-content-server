@@ -19,7 +19,7 @@ def valid_emails(email_list=[]):
         try:
             validate_email(email)
         except:
-            emails.remove(email)
+            email_list.remove(email)
     return sorted(email_list, key=str.lower)
 
 lexicographical_order = valid_emails(emails)
