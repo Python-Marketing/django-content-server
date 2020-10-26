@@ -170,9 +170,9 @@ What is the difference between a Project and an App?
 
 ```
 
-A project is the the whole application, the sum of its parts.
+A project is the all the source code, the sum of its parts.
 
-The app is a component of the projects. And must be in the settings file in INSTALLED_APPS
+The app is a component of the project. And must be in the settings file in INSTALLED_APPS
 
 ```
 
