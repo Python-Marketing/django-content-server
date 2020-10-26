@@ -97,7 +97,7 @@ def palindrome_integer(string):
     integers = string.split(" ")
     for integer in integers:
         reverse = str(int)[::-1]
-        '''Check if palindrome then return False'''
+        '''Check if not palindrome then return False'''
         if integer != reverse:
             return False
     return True
