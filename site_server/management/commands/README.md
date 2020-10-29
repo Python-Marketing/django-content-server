@@ -4,7 +4,7 @@
 
 Code [Source](python_test.py)
 
-The link above to to the working code
+The link above is to the working code
 
 
 #### Question 1
@@ -14,12 +14,15 @@ You are given an integer followed by n email addresses in a text file. Your task
 Email list [Source](emails.csv)
 ```
 Answer
+
+from django.core.validators import validate_email
+
 def valid_emails(email_list=[]):
     for email in email_list:
         try:
             validate_email(email)
         except:
-            emails.remove(email)
+            email_list.remove(email)
     return sorted(email_list, key=str.lower)
 
 lexicographical_order = valid_emails(emails)
@@ -170,9 +173,9 @@ What is the difference between a Project and an App?
 
 ```
 
-A project is the the whole application, the sum of its parts.
+A project is all the source code, the sum of its parts.
 
-The app is a component of the projects. And must be in the settings file in INSTALLED_APPS
+The app is a component of the project. And must be in the settings file in INSTALLED_APPS
 
 ```
 
