@@ -321,7 +321,7 @@ class Command(BaseCommand):
 
             run_daemon(self)
 
-            query.running = False
+            #query.running = False
             query.save()
             self.stdout.write("After daemon")
 

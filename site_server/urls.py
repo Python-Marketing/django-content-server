@@ -12,7 +12,8 @@ from django.views.static import serve
 import api
 from allauth import urls as socialmarket
 from api.urls import router
-from api.views import SocialLoginView, DonateView, VolunteerAjax, ContactAjax, RecordAudioAjax, AddGumtreeQuery
+from api.views import SocialLoginView, DonateView, VolunteerAjax, ContactAjax, RecordAudioAjax, AddGumtreeQuery, \
+       QueryCreateView, QueryResultView
 from cms.sitemaps import CMSSitemap
 
 '''
@@ -26,6 +27,11 @@ urlpatterns = [
 # urlpatterns += i18n_patterns(
 urlpatterns += [
        # Social Market accounts management
+
+       url("select2/", include("django_select2.urls")),
+       url(r"gumtree/results/(?P<pk>\d+)/$", QueryResultView.as_view(), name="gumtree-results"),
+       url("gumtree/search/", QueryCreateView.as_view(), name="gumtree-search"),
+
        url('accounts/', include(socialmarket)),
        url('accounts/social_login', SocialLoginView.as_view()),
        # Seperate API for our content and auth

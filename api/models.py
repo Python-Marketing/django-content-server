@@ -261,7 +261,7 @@ class BeautifulGumtreeResult(models.Model):
         return force_text(_('%s') % self.bgs.allowed.name)
 
     def __str__(self):
-        return force_text(_('%s') % self.bgs.allowed.name   )
+        return force_text(_('%s') % self.bgs.allowed.name)
 
 
 class Picture(models.Model):

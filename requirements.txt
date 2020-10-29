@@ -61,3 +61,8 @@ ordereddict
 #Google-Images-Search
 python-daemon
 psutil
+
+django-select2
+django_redis
+
+django-crispy-forms

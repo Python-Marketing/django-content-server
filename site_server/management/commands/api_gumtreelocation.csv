@@ -1,0 +1,508 @@
+1,Port Elizabeth,port-elizabeth,l3100306,1,
+2,East London,east-london,l3100300,1,
+3,Despatch,despatch,l3100697,1,
+4,Jeffreys Bay,jeffreys-bay,l3100301,1,
+5,Mdantsane,mdantsane,l3100302,1,
+6,Other Eastern Cape,other-eastern-cape,l3100604,1,
+7,Uitenhage,uitenhage,l3100472,1,
+8,Port Alfred,port-alfred,l3100625,1,
+9,Umtata / Mthatha,umtata-mthatha,l3100473,1,
+10,Grahamstown,grahamstown,l3100471,1,
+11,Queenstown,queenstown,l3100303,1,
+12,Graaff-Reinet,graaff+reinet,l3100620,1,
+13,Cradock,cradock,l3100470,1,
+14,St Francis Bay,st-francis-bay,l3100696,1,
+15,Middelburg,middelburg,l3100624,1,
+16,Aliwal North,aliwal-north,l3100610,1,
+17,King WilliamsTown,king-williamstown,l3100700,1,
+18,Adelaide,adelaide,l3100611,1,
+19,Butterworth,butterworth,l3100616,1,
+20,Kareedouw,kareedouw,l3100622,1,
+21,Kirkwood,kirkwood,l3100623,1,
+22,Barkly East,barkly-east,l3100613,1,
+23,Bhisho,bhisho,l3100299,1,
+24,Bizana,bizana,l3100614,1,
+25,Burgersdorp,burgersdorp,l3100615,1,
+26,Somerset East,somerset-east,l3100626,1,
+27,Elliot,elliot,l3100617,1,
+28,Fort Beaufort,fort-beaufort,l3100619,1,
+29,Flagstaff,flagstaff,l3100618,1,
+30,Willowmore,willowmore,l3100628,1,
+31,Coffee Bay,coffee-bay,l3100474,1,
+32,Alice,alice,l3100612,1,
+33,Willowvale,willowvale,l3100476,1,
+34,Stutterheim,stutterheim,l3100627,1,
+35,Port St Johns,port-st-johns,l3100475,1,
+36,Matatiele,matatiele,l3100699,1,
+37,Jansenville,jansenville,l3100621,1,
+38,Hogsback,hogsback,l3100698,1,
+39,Bloemfontein,bloemfontein,l3100460,2,
+40,Other Free State,other-free-state,l3100606,2,
+41,Parys,parys,l3100465,2,
+42,Bethlehem,bethlehem,l3100456,2,
+43,Sasolburg,sasolburg,l3100466,2,
+44,Deneysville,deneysville,l3100632,2,
+45,Welkom,welkom,l3100469,2,
+46,Kroonstad,kroonstad,l3100464,2,
+47,Memel,memel,l3100704,2,
+48,Harrismith,harrismith,l3100457,2,
+49,Vrede,vrede,l3100644,2,
+50,Vredefort,vredefort,l3100645,2,
+51,Ladybrand,ladybrand,l3100639,2,
+52,Hoopstad,hoopstad,l3100636,2,
+53,Springfontein,springfontein,l3100461,2,
+54,Frankfort,frankfort,l3100633,2,
+55,Heilbron,heilbron,l3100634,2,
+56,Phuthaditjhaba,phuthaditjhaba,l3100640,2,
+57,Hennenman,hennenman,l3100635,2,
+58,Virginia,virginia,l3100468,2,
+59,Brandfort,brandfort,l3100630,2,
+60,Bultfontein,bultfontein,l3100695,2,
+61,Koffiefontein,koffiefontein,l3100637,2,
+62,Viljoenskroon,viljoenskroon,l3100643,2,
+63,Ficksburg,ficksburg,l3100703,2,
+64,Thaba 'Nchu,thaba-nchu,l3100462,2,
+65,Wesselsbron,wesselsbron,l3100646,2,
+66,Theunissen,theunissen,l3100642,2,
+67,Clocolan,clocolan,l3100631,2,
+68,Botshabelo,botshabelo,l3100629,2,
+69,Senekal,senekal,l3100458,2,
+70,Reitz,reitz,l3100641,2,
+71,Koppies,koppies,l3100638,2,
+72,Winburg,winburg,l3100647,2,
+73,East Rand,east-rand,l3100250,3,
+74,Boksburg,boksburg,l3100371,3,73
+75,Alberton,alberton,l3100368,3,73
+76,Benoni,benoni,l3100370,3,73
+77,Kempton Park,kempton-park,l3100375,3,73
+78,Edenvale,edenvale,l3100373,3,73
+79,Bedfordview,bedfordview,l3100369,3,73
+80,Germiston,germiston,l3100374,3,73
+81,Brakpan,brakpan,l3100372,3,73
+82,Springs,springs,l3100376,3,73
+83,Other,other,l3100564,3,73
+84,Tembisa,tembisa,l3100377,3,73
+85,Johannesburg,johannesburg,l3100090,3,
+86,Johannesburg CBD,johannesburg-cbd,l3100346,3,85
+87,Randburg,randburg,l3100106,3,85
+88,Sandton,sandton,l3100108,3,85
+89,Johannesburg South,johannesburg-south,l3100103,3,85
+90,Midrand,midrand,l3100353,3,85
+91,Roodepoort,roodepoort,l3100107,3,85
+92,Fourways,fourways,l3100343,3,85
+93,Inner City / CBDBruma,inner-city-cbd-bruma,l3100105,3,85
+94,Rosebank,rosebank,l3100356,3,85
+95,Bryanston,bryanston,l3100335,3,85
+96,Lenasia,lenasia,l3100349,3,85
+97,Highlands North,highlands-north,l3100749,3,85
+98,Northcliff,northcliff,l3100355,3,85
+99,Northgate,northgate,l3100354,3,85
+100,Kensington,kensington,l3100759,3,85
+101,Sunninghill,sunninghill,l3100362,3,85
+102,Soweto,soweto,l3100104,3,85
+103,Melville,melville,l3100351,3,85
+104,Parktown,parktown,l3100359,3,85
+105,Alexandra,alexandra,l3100334,3,85
+106,Woodmead,woodmead,l3100364,3,85
+107,North Riding,north-riding,l3100750,3,85
+108,Cosmo City,cosmo-city,l3100747,3,85
+109,Randpark Ridge,randpark-ridge,l3100752,3,85
+110,Protea Glen,protea-glen,l3100360,3,85
+111,Constantia Kloof,constantia-kloof,l3100336,3,85
+112,Southgate,southgate,l3100361,3,85
+113,Illovo,illovo,l3100751,3,85
+114,Douglasdale,douglasdale,l3100340,3,85
+115,Ivory Park,ivory-park,l3100345,3,85
+116,Parkhurst,parkhurst,l3100748,3,85
+117,Katlehong,katlehong,l3100347,3,85
+118,Ennerdale,ennerdale,l3100342,3,85
+119,Greenside,greenside,l3100344,3,85
+120,Fairland,fairland,l3100754,3,85
+121,Walkerville,walkerville,l3100363,3,85
+122,Diepkloof,diepkloof,l3100337,3,85
+123,Lanseria,lanseria,l3100348,3,85
+124,Emmarentia,emmarentia,l3100341,3,85
+125,Diepsloot,diepsloot,l3100338,3,85
+126,Bram Fischerville,bram-fischerville,l3100753,3,85
+127,Meadowlands,meadowlands,l3100350,3,85
+128,Dobsonville,dobsonville,l3100339,3,85
+129,Pretoria / Tshwane,pretoria-tshwane,l3100094,3,
+130,Centurion,centurion,l3100247,3,129
+131,Northern Pretoria,northern-pretoria,l3100248,3,129
+132,Eastern Pretoria,eastern-pretoria,l3100249,3,129
+133,Pretoria West,pretoria-west,l3100755,3,129
+134,City Centre,city-centre,l3100131,3,129
+135,Menlyn Park,menlyn-park,l3100367,3,129
+136,Sunnyside  Arcadia,sunnyside-arcadia,l3100135,3,129
+137,Hatfield,hatfield,l3100134,3,129
+138,Mamelodi,mamelodi,l3100366,3,129
+139,Brooklyn,brooklyn,l3100133,3,129
+140,Arcadia,arcadia,l3100365,3,129
+141,Bronkhorstspruit,bronkhorstspruit,l3100257,3,129
+142,GaRankuwa,garankuwa,l3100694,3,129
+143,Sedibeng,sedibeng,l3100095,3,
+144,Evaton,evaton,l3100378,3,143
+145,Heidelberg,heidelberg,l3100379,3,143
+146,Meyerton,meyerton,l3100593,3,143
+147,Orange Farm,orange-farm,l3100592,3,143
+148,Vanderbijlpark,vanderbijlpark,l3100380,3,143
+149,Vereeniging,vereeniging,l3100381,3,143
+150,West Rand,west-rand,l3100251,3,
+151,Carletonville,carletonville,l3100382,3,150
+152,Kagiso,kagiso,l3100383,3,150
+153,Krugersdorp,krugersdorp,l3100384,3,150
+154,Randfontein,randfontein,l3100385,3,150
+155,Westonaria,westonaria,l3100386,3,150
+156,Durban City,durban-city,l3100149,4,
+157,Berea  Musgrave,berea-musgrave,l3100153,4,156
+158,Chatsworth,chatsworth,l3100421,4,156
+159,Morningside,morningside,l3100156,4,156
+160,Greyville,greyville,l3100152,4,156
+161,Golden Mile,golden-mile,l3100151,4,156
+162,Umlazi,umlazi,l3100428,4,156
+163,Clare Hills,clare-hills,l3100756,4,156
+164,Umbilo,umbilo,l3100757,4,156
+165,Point  Harbour,point-harbour,l3100155,4,156
+166,KwaMashu,kwamashu,l3100425,4,156
+167,Inanda,inanda,l3100424,4,156
+168,North Suburbs,north-suburbs,l3100158,4,
+169,Durban North,durban-north,l3100159,4,168
+170,Umhlanga,umhlanga,l3100164,4,168
+171,Phoenix,phoenix,l3100426,4,168
+172,Mount Edgecombe,mount-edgecombe,l3100162,4,168
+173,Verulam,verulam,l3100430,4,168
+174,Newlands,newlands,l3100760,4,168
+175,Tongaat,tongaat,l3100429,4,168
+176,Umdloti Beach,umdloti-beach,l3100163,4,168
+177,West Suburbs,west-suburbs,l3100172,4,
+178,Pinetown,pinetown,l3100177,4,177
+179,Queensburgh,queensburgh,l3100528,4,177
+180,Westville,westville,l3100179,4,177
+181,Hillcrest,hillcrest,l3100175,4,177
+182,Kloof,kloof,l3100176,4,177
+183,New Germany,new-germany,l3100435,4,177
+184,Gillitts,gillitts,l3100174,4,177
+185,Waterfall,waterfall,l3100436,4,177
+186,Reservoir Hills,reservoir-hills,l3100533,4,177
+187,Drummond,drummond,l3100434,4,177
+188,Midlands,midlands,l3100184,4,
+189,Estcourt,estcourt,l3100447,4,188
+190,Greytown,greytown,l3100448,4,188
+191,Howick,howick,l3100449,4,188
+192,Kokstad,kokstad,l3100450,4,188
+193,Pietermaritzburg,pietermaritzburg,l3100451,4,188
+194,Richmond,richmond,l3100452,4,188
+195,South Suburbs,south-suburbs,l3100166,4,
+196,Bluff,bluff,l3100591,4,195
+197,Amanzimtoti,amanzimtoti,l3100262,4,195
+198,Glenwood,glenwood,l3100537,4,195
+199,Isipingo Beach,isipingo-beach,l3100170,4,195
+200,South Beach,south-beach,l3100432,4,195
+201,Kingsborough,kingsborough,l3100431,4,195
+202,Glenmore,glenmore,l3100538,4,195
+203,Umkomaas,umkomaas,l3100433,4,195
+204,North Coast,north-coast,l3100181,4,
+205,Ballitoville,ballitoville,l3100437,4,204
+206,Richards Bay,richards-bay,l3100440,4,204
+207,Empangeni,empangeni,l3100438,4,204
+208,Stanger,stanger,l3100441,4,204
+209,Ilembe (Dolphin Coast),ilembe-dolphin-coast,l3100271,4,204
+210,Eshowe,eshowe,l3100439,4,204
+211,Umkhanyakude,umkhanyakude,l3100272,4,204
+212,Uthungulu/Richards Bay,uthungulu-richards-bay,l3100273,4,204
+213,South Coast (Ugu),south-coast-ugu,l3100182,4,
+214,Margate,margate,l3100442,4,213
+215,Port Shepstone,port-shepstone,l3100443,4,213
+216,Scottburgh,scottburgh,l3100445,4,213
+217,Hibiscus Coast,hibiscus-coast,l3100264,4,213
+218,Port Edward,port-edward,l3100444,4,213
+219,Umdoni,umdoni,l3100265,4,213
+220,Umzumbe,umzumbe,l3100446,4,213
+221,Drakensberg,drakensberg,l3100185,4,
+222,Amajuba - Newcastle,amajuba-+-newcastle,l3100268,4,221
+223,Ulundi,ulundi,l3100453,4,221
+224,Umzinyathi - Dundee,umzinyathi-+-dundee,l3100269,4,221
+225,Uthukela - Ladysmith,uthukela-+-ladysmith,l3100267,4,221
+226,Vryheid,vryheid,l3100454,4,221
+227,Zululand,zululand,l3100270,4,221
+228,Polokwane / Pietersburg,polokwane-pietersburg,l3100226,5,
+229,Bela-Bela / Warmbad,bela+bela-warmbad,l3100677,5,
+230,Other Limpopo,other-limpopo,l3100567,5,
+231,Lephalale / Ellisras,lephalale-ellisras,l3100680,5,
+232,Tzaneen,tzaneen,l3100388,5,
+233,Modimolle / Nylstroom,modimolle-nylstroom,l3100225,5,
+234,Mokopane / Potgietersrus,mokopane-potgietersrus,l3100685,5,
+235,Louis Trichardt,louis-trichardt,l3100389,5,
+236,Phalaborwa,phalaborwa,l3100387,5,
+237,Thohoyandou,thohoyandou,l3100690,5,
+238,Hoedspruit,hoedspruit,l3100706,5,
+239,Thabazimbi,thabazimbi,l3100689,5,
+240,Musina / Messina,musina-messina,l3100224,5,
+241,Giyani,giyani,l3100678,5,
+242,Lebowakgomo,lebowakgomo,l3100679,5,
+243,Marblehall,marblehall,l3100683,5,
+244,Mankweng,mankweng,l3100682,5,
+245,Dendron,dendron,l3100600,5,
+246,Nkowankowa,nkowankowa,l3100687,5,
+247,Modjadji / Duiwelskloof,modjadji-duiwelskloof,l3100684,5,
+248,Lulekani,lulekani,l3100681,5,
+249,Mutale,mutale,l3100686,5,
+250,Thulamela,thulamela,l3100691,5,
+251,Soekmekaar,soekmekaar,l3100688,5,
+252,Witbank,witbank,l3100404,6,
+253,Mbombela / Nelspruit,mbombela-nelspruit,l3100395,6,
+254,Secunda,secunda,l3100402,6,
+255,Other Mpumalanga,other-mpumalanga,l3100605,6,
+256,Witrivier,witrivier,l3100396,6,
+257,Delmas,delmas,l3100399,6,
+258,Ermelo,ermelo,l3100416,6,
+259,Komatipoort,komatipoort,l3100654,6,
+260,Lydenburg,lydenburg,l3100407,6,
+261,Hazyview,hazyview,l3100393,6,
+262,New-Location,new+location,l3100409,6,
+263,Malelane,malelane,l3100394,6,
+264,Dullstroom,dullstroom,l3100406,6,
+265,Barberton,barberton,l3100391,6,
+266,Groblersdal,groblersdal,l3100653,6,
+267,Bethal,bethal,l3100398,6,
+268,Standerton,standerton,l3100403,6,
+269,Trichardt,trichardt,l3100705,6,
+270,Piet Retief,piet-retief,l3100417,6,
+271,Balfour,balfour,l3100397,6,
+272,Machadodorp,machadodorp,l3100408,6,
+273,Bushbuckridge,bushbuckridge,l3100392,6,
+274,Sabie,sabie,l3100410,6,
+275,Ekangala,ekangala,l3100650,6,
+276,Carolina,carolina,l3100649,6,
+277,Embalenhle,embalenhle,l3100651,6,
+278,eMakhazeni / Belfast,emakhazeni-belfast,l3100405,6,
+279,Wakkerstroom,wakkerstroom,l3100419,6,
+280,Empuluzi,empuluzi,l3100652,6,
+281,Greylingstad,greylingstad,l3100400,6,
+282,Kriel,kriel,l3100401,6,
+283,Hendrina,hendrina,l3100415,6,
+284,Siyabuswa,siyabuswa,l3100658,6,
+285,Breyten,breyten,l3100648,6,
+286,Ogies / Phola,ogies-phola,l3100657,6,
+287,Volksrust,volksrust,l3100418,6,
+288,Leslie / Lebogang,leslie-lebogang,l3100656,6,
+289,KwaNgema,kwangema,l3100655,6,
+290,Kimberley,kimberley,l3100489,7,
+291,Upington,upington,l3100501,7,
+292,Carnarvon,carnarvon,l3100664,7,
+293,Alexander Bay,alexander-bay,l3100494,7,
+294,Other Northern Cape,other-northern-cape,l3100602,7,
+295,Kathu,kathu,l3100668,7,
+296,Kuruman,kuruman,l3100492,7,
+297,Port Nolloth,port-nolloth,l3100671,7,
+298,Springbok,springbok,l3100495,7,
+299,Calvinia,calvinia,l3100478,7,
+300,Barkly West,barkly-west,l3100486,7,
+301,Keimoes,keimoes,l3100498,7,
+302,De Aar,de-aar,l3100483,7,
+303,Mier,mier,l3100669,7,
+304,Beeshoek,beeshoek,l3100491,7,
+305,Fraserburg,fraserburg,l3100479,7,
+306,Sutherland,sutherland,l3100480,7,
+307,Prieska,prieska,l3100672,7,
+308,Groblershoop,groblershoop,l3100667,7,
+309,Postmasburg,postmasburg,l3100500,7,
+310,Victoria West,victoria-west,l3100484,7,
+311,Garies,garies,l3100665,7,
+312,Colesberg,colesberg,l3100482,7,
+313,Hartswater,hartswater,l3100487,7,
+314,Jan Kempdorp,jan-kempdorp,l3100488,7,
+315,Vanderkloof,vanderkloof,l3100675,7,
+316,Ritchie,ritchie,l3100673,7,
+317,Warrenton,warrenton,l3100676,7,
+318,Griekwastad,griekwastad,l3100666,7,
+319,Danielskuil,danielskuil,l3100497,7,
+320,Pofadder,pofadder,l3100499,7,
+321,Strydenburg,strydenburg,l3100674,7,
+322,Pampierstad,pampierstad,l3100670,7,
+323,Douglas,douglas,l3100701,7,
+324,Aggeneys,aggeneys,l3100702,7,
+325,Rustenburg,rustenburg,l3100521,8,
+326,Hartbeespoort,hartbeespoort,l3100518,8,
+327,Potchefstroom,potchefstroom,l3100507,8,
+328,Klerksdorp,klerksdorp,l3100505,8,
+329,Brits,brits,l3100517,8,
+330,Other North West,other-north-west,l3100603,8,
+331,Stilfontein,stilfontein,l3100508,8,
+332,Zeerust,zeerust,l3100515,8,
+333,Mahikeng / Mafikeng,mahikeng-mafikeng,l3100514,8,
+334,Fochville,fochville,l3100692,8,
+335,Orkney,orkney,l3100506,8,
+336,Mabopane,mabopane,l3100520,8,
+337,Mothibistad,mothibistad,l3100661,8,
+338,Koster,koster,l3100519,8,
+339,Lichtenburg,lichtenburg,l3100513,8,
+340,Magaliesburg,magaliesburg,l3100522,8,
+341,Vryburg,vryburg,l3100527,8,
+342,Mogwase,mogwase,l3100660,8,
+343,Ventersdorp,ventersdorp,l3100509,8,
+344,Stella,stella,l3100526,8,
+345,Christiana,christiana,l3100504,8,
+346,Wolmaransstad,wolmaransstad,l3100510,8,
+347,Mmbatho,mmbatho,l3100659,8,
+348,Delareyville,delareyville,l3100512,8,
+349,Schweizer-Reneke,schweizer+reneke,l3100525,8,
+350,Bloemhof,bloemhof,l3100503,8,
+351,Bray,bray,l3100524,8,
+352,Reivilo,reivilo,l3100663,8,
+353,Ottosdal / Letsopa,ottosdal-letsopa,l3100693,8,
+354,Pomfret,pomfret,l3100662,8,
+355,Northern Suburbs,northern-suburbs,l3100007,9,
+356,Goodwood,goodwood,l3100190,9,355
+357,Bellville,bellville,l3100037,9,355
+358,Durbanville,durbanville,l3100038,9,355
+359,Parow,parow,l3100204,9,355
+360,Brackenfell,brackenfell,l3100189,9,355
+361,Milnerton,milnerton,l3100064,9,355
+362,Kuils River,kuils-river,l3100191,9,355
+363,Kraaifontein,kraaifontein,l3100188,9,355
+364,Edgemead,edgemead,l3100309,9,355
+365,Plattekloof,plattekloof,l3100723,9,355
+366,Montague Gardens,montague-gardens,l3100714,9,355
+367,Buh rein,buh-rein,l3100727,9,355
+368,Cape Town,cape-town,l3100006,9,
+369,Century City,century-city,l3100536,9,368
+370,Woodstock,woodstock,l3100274,9,368
+371,Higgovale,higgovale,l3100286,9,368
+372,Salt River,salt-river,l3100288,9,368
+373,Maitland,maitland,l3100719,9,368
+374,Gardens,gardens,l3100031,9,368
+375,De Waterkant,de-waterkant,l3100275,9,368
+376,Foreshore,foreshore,l3100287,9,368
+377,Tamboerskloof,tamboerskloof,l3100034,9,368
+378,Vredehoek,vredehoek,l3100035,9,368
+379,Oranjezicht,oranjezicht,l3100285,9,368
+380,University Estate,university-estate,l3100289,9,368
+381,Bo-Kaap,bo+kaap,l3100290,9,368
+382,Devils Peak,devils-peak,l3100030,9,368
+383,Southern Suburbs,southern-suburbs,l3100008,9,
+384,Wynberg  Plumstead,wynberg-plumstead,l3100049,9,383
+385,Claremont  Newlands,claremont-newlands,l3100041,9,383
+386,Plumstead,plumstead,l3100320,9,383
+387,Rondebosch,rondebosch,l3100047,9,383
+388,Crawford,crawford,l3100589,9,383
+389,Tokai,tokai,l3100048,9,383
+390,Diep River,diep-river,l3100043,9,383
+391,Lansdowne,lansdowne,l3100590,9,383
+392,Observatory,observatory,l3100319,9,383
+393,Grassy Park,grassy-park,l3100716,9,383
+394,Kenilworth,kenilworth,l3100044,9,383
+395,Constantia,constantia,l3100042,9,383
+396,Ottery,ottery,l3100740,9,383
+397,Kenwyn,kenwyn,l3100316,9,383
+398,Retreat,retreat,l3100321,9,383
+399,Mowbray,mowbray,l3100314,9,383
+400,Pinelands,pinelands,l3100707,9,383
+401,Heathfield,heathfield,l3100315,9,383
+402,Bergvliet,bergvliet,l3100717,9,383
+403,Meadowridge,meadowridge,l3100317,9,383
+404,Kirstenhof,kirstenhof,l3100735,9,383
+405,Thornton,thornton,l3100720,9,383
+406,West Coast,west-coast,l3100010,9,
+407,Blouberg,blouberg,l3100061,9,406
+408,Tableview,tableview,l3100529,9,406
+409,Parklands,parklands,l3100530,9,406
+410,Langebaan,langebaan,l3100062,9,406
+411,Melkbosstrand,melkbosstrand,l3100063,9,406
+412,Flamingo Vlei,flamingo-vlei,l3100532,9,406
+413,West Beach,west-beach,l3100333,9,406
+414,Sunningdale,sunningdale,l3100712,9,406
+415,St.Helena Bay,st-helena-bay,l3100710,9,406
+416,Saldanha,saldanha,l3100330,9,406
+417,Malmesbury,malmesbury,l3100709,9,406
+418,Velddrif,velddrif,l3100331,9,406
+419,Vredenburg,vredenburg,l3100708,9,406
+420,Vredendal,vredendal,l3100332,9,406
+421,Atlantis,atlantis,l3100728,9,406
+422,Yzerfontein,yzerfontein,l3100726,9,406
+423,Riebeeck Kasteel,riebeeck-kasteel,l3100742,9,406
+424,Darling,darling,l3100743,9,406
+425,Piketberg,piketberg,l3100736,9,406
+426,Clanwilliam,clanwilliam,l3100328,9,406
+427,Porterville,porterville,l3100725,9,406
+428,Moorreesburg,moorreesburg,l3100715,9,406
+429,Citrusdal,citrusdal,l3100327,9,406
+430,Lamberts Bay,lamberts-bay,l3100744,9,406
+431,Hopefield,hopefield,l3100737,9,406
+432,Redelinghuys,redelinghuys,l3100535,9,406
+433,Cederberg,cederberg,l3100326,9,406
+434,Vanrhynsdorp - North,vanrhynsdorp-+-north,l3100208,9,406
+435,Helderberg,helderberg,l3100209,9,
+436,Gordon's Bay,gordon-s-bay,l3100211,9,435
+437,Macassar,macassar,l3100734,9,435
+438,Somerset West,somerset-west,l3100210,9,435
+439,Strand,strand,l3100212,9,435
+440,Cape Winelands,cape-winelands,l3100240,9,
+441,Stellenbosch,stellenbosch,l3100295,9,440
+442,Paarl,paarl,l3100293,9,440
+443,Wellington,wellington,l3100296,9,440
+444,Worcester,worcester,l3100297,9,440
+445,Robertson,robertson,l3100294,9,440
+446,Franschhoek,franschhoek,l3100588,9,440
+447,Ceres,ceres,l3100292,9,440
+448,Ashton,ashton,l3100291,9,440
+449,Eden,eden,l3100241,9,
+450,Mosselbaai,mosselbaai,l3100242,9,449
+451,George,george,l3100255,9,449
+452,Knysna,knysna,l3100307,9,449
+453,Plettenberg Bay,plettenberg-bay,l3100256,9,449
+454,Riversdale,riversdale,l3100745,9,449
+455,Oudtshoorn,oudtshoorn,l3100308,9,449
+456,Ladismith,ladismith,l3100746,9,449
+457,Stanford,stanford,l3100738,9,449
+458,Cape Flats,cape-flats,l3100261,9,
+459,Mitchell's Plain,mitchell-s-plain,l3100284,9,458
+460,Athlone,athlone,l3100540,9,458
+461,Blue Downs,blue-downs,l3100279,9,458
+462,Elsie's River,elsie-s-river,l3100281,9,458
+463,Airport industria,airport-industria,l3100722,9,458
+464,Khayelitsha,khayelitsha,l3100283,9,458
+465,Belhar,belhar,l3100721,9,458
+466,Delft,delft,l3100280,9,458
+467,Langa,langa,l3100739,9,458
+468,Eerste Rivier,eerste-rivier,l3100713,9,458
+469,Gugulethu,gugulethu,l3100282,9,458
+470,Atlantic Seaboard,atlantic-seaboard,l3100005,9,
+471,Sea Point  Three Anchor Bay,sea-point-three-anchor-bay,l3100025,9,470
+472,Hout Bay,hout-bay,l3100022,9,470
+473,Green Point   Waterfront,green-point-waterfront,l3100021,9,470
+474,Camps Bay,camps-bay,l3100017,9,470
+475,Bantry Bay,bantry-bay,l3100276,9,470
+476,Mouille Point,mouille-point,l3100278,9,470
+477,Clifton,clifton,l3100277,9,470
+478,llandudno,llandudno,l3100730,9,470
+479,Southern Peninsula,southern-peninsula,l3100009,9,
+480,Muizenberg,muizenberg,l3100055,9,479
+481,Fish Hoek,fish-hoek,l3100051,9,479
+482,Simon's Town,simon-s-town,l3100058,9,479
+483,Noordhoek,noordhoek,l3100056,9,479
+484,Capri,capri,l3100731,9,479
+485,Lakeside,lakeside,l3100711,9,479
+486,Kommetjie,kommetjie,l3100324,9,479
+487,Glencairn,glencairn,l3100322,9,479
+488,Kalk Bay,kalk-bay,l3100323,9,479
+489,Strandfontein,strandfontein,l3100724,9,479
+490,Scarborough,scarborough,l3100057,9,479
+491,Ocean View,ocean-view,l3100325,9,479
+492,Overberg,overberg,l3100245,9,
+493,Hermanus,hermanus,l3100253,9,492
+494,Bredasdorp,bredasdorp,l3100312,9,492
+495,Swellendam,swellendam,l3100246,9,492
+496,Caledon,caledon,l3100313,9,492
+497,Gansbaai,gansbaai,l3100732,9,492
+498,Kleinmond,kleinmond,l3100718,9,492
+499,Cape Agulhas,cape-agulhas,l3100254,9,492
+500,Betty's Bay,betty-s-bay,l3100729,9,492
+501,Villiersdorp,villiersdorp,l3100741,9,492
+502,Rooi-Els,rooi+els,l3100539,9,492
+503,Pringle Bay,pringle-bay,l3100733,9,492
+504,Central Karoo,central-karoo,l3100243,9,
+505,Beaufort West,beaufort-west,l3100244,9,504
+506,Klein Karoo,klein-karoo,l3100531,9,504
+507,Laingsburg,laingsburg,l3100298,9,504
+508,Prince Albert,prince-albert,l3100263,9,504

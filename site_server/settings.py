@@ -201,9 +201,13 @@ INSTALLED_APPS = [
     # Start of invoicing module
     'invoicing',
     'tracker',
-    'widget_tweaks'
+    'widget_tweaks',
+    'django_select2',
+    'crispy_forms'
 
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LANGUAGES = (
     ('en', gettext('en')),
@@ -233,7 +237,8 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 1000000000
 # Default template used
 CMS_TEMPLATES = (
     # ('starton/home.html', 'Start'),
-    ('dashboard/home.html', 'Dashboard'),
+    ('startup/home.html', 'Startup'),
+    # ('dashboard/home.html', 'Dashboard'),
     #('newsbit/home.html', 'Newsbit'),
 )
 
@@ -612,3 +617,24 @@ except:
 # For example if you choose reset counter on daily basis, you need to use in INVOICING_NUMBER_FORMAT
 # at least {{ invoice.date_issue|date:'d/m/Y' }} to distinguish invoice's full numbers between days.
 INVOICING_NUMBER_FORMAT = "{{ invoice.date_issue|date:'Y/m' }}/{{ invoice.number }}"
+
+CACHES = {
+    # … default cache config and others
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/2",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+    },
+    "select2": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/2",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+    }
+}
+
+# Tell select2 which cache configuration to use:
+SELECT2_CACHE_BACKEND = "select2"

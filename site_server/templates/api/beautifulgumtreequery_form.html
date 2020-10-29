@@ -1,0 +1,96 @@
+{% load cms_tags sekizai_tags %}
+{% load i18n easy_thumbnails_tags cms_tags site_server_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% query_filter request post_list '' True 0 as banner %}
+    <title>
+        {% block title %}{{ banner.get_title }}{% endblock title %}
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% addtoblock "css" %}
+      {% with '/static/starton/' as css_base %}
+
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ css_base }}bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ css_base }}css/plagin-css/plagin.css">
+        <link rel="stylesheet" href="{{ css_base }}icons/toicons/css/styles.css">
+        <link rel="stylesheet" href="{{ css_base }}css/style.css">
+        <link rel="stylesheet" href="{{ css_base }}css/responsive.css">
+
+      {% endwith %}
+      {{ form.media.css }}
+      <style>input, select {width: 100%}</style>
+    {% endaddtoblock %}
+
+    {% render_block "css" %}
+  </head>
+  <body>
+
+{% load crispy_forms_tags %}
+{% spaceless %}
+  <body>
+    <div class="container">
+
+        <div class="col-12">
+          <h1 class="mt-2">New Gumtree Query</h1>
+          <hr class="mt-0 mb-4">
+                {% if query %}
+
+                <div class="row">
+                  <div class="col-sm-6 left"></div>
+                  <div class="col-sm-6 right"></div>
+                </div>
+                <div class="results">
+                </div>
+                {% else %}
+                <form method="POST" action="/gumtree/search/">
+                    {% csrf_token %}
+
+                <div class="row">
+                  <div class="col-sm-6">{{ form.province|as_crispy_field }}</div>
+                  <div class="col-sm-6">{{ form.location|as_crispy_field }}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6">{{ form.label|as_crispy_field }}</div>
+                  <div class="col-sm-6">{{ form.category|as_crispy_field }}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6">{{ form.term|as_crispy_field }}</div>
+
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">{{ form.price_start|as_crispy_field }}</div>
+                  <div class="col-sm-6">{{ form.price_end|as_crispy_field }}</div>
+                </div>
+
+
+                <input type="submit">
+                </form>
+                {% endif %}
+            <br /><br />
+        </div>
+      </div>
+
+
+{% endspaceless %}
+{% spaceless %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{ form.media.js }}
+{% endspaceless %}
+
+  {% addtoblock "js" %}
+  {% endaddtoblock %}
+
+  {% render_block "js" %}
+
+  {% include 'api/custom_scripts.js' %}
+
+  </body>
+</html>
