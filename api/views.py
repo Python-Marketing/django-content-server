@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
 from django.http.response import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from django.utils.html import format_html
 from django.views.generic import FormView
 from django.views.generic.base import View
@@ -18,11 +19,48 @@ from cms.models import Page, reverse
 from djangocms_blog.models import Post
 from invoicing.models import Invoice
 from tracker.models import Story, Developer, Task
+from .forms import QueryForm
 from .models import Post as ApiPost, Donation, Volunteer, BeautifulGumtreeQuery, GumtreeLocation, GumtreeProvince, \
     GumtreeCategory, GumtreeCategoryLabel
 from .serializer import UserSerializer, PageSerializer, PostSerializer
 from django.template.loader import get_template
 from django.template import Context
+
+
+# views.py
+from django.views import generic
+
+
+class QueryResultView(generic.View):
+
+    def get(self, request, *args, **kwargs):
+        query_result = get_object_or_404(BeautifulGumtreeQuery, pk=kwargs['pk'])
+        context = {'query_result': query_result}
+        return render(request, 'api/results.html', context)
+
+
+class QueryCreateView(generic.View):
+
+    def get(self, request, *args, **kwargs):
+        form = QueryForm()
+        context = {'form': form}
+        return render(request, 'api/beautifulgumtreequery_form.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = QueryForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+
+            return render(
+                request,
+                'api/beautifulgumtreequery_form.html',
+                {
+                    'form': form,
+                    'query': BeautifulGumtreeQuery.objects.all().order_by("-id")[0]
+                }
+            )
+        return render(request, 'api/beautifulgumtreequery_form.html', {'form': form})
+
 
 
 def add_gumtree_query(request):

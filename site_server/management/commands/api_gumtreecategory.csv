@@ -1,0 +1,195 @@
+1,Cars and Bakkies,carbakkies,c9077,1
+2,Auto Parts and Accessories,auto-partaccessories,c9026,1
+3,Motorcycles and Scooters,motorcyclescooters,c9027,1
+4,Motorcycle Parts and Accessories,motorcycle-partaccessories,c9215,1
+5,Caravans and Trailers,caravantrailers,c9028,1
+6,Classic and Vintage Cars,classic-vintage-cars,c9029,1
+7,Medium and Heavy Commercials,medium-heavy-commercials,c9132,1
+8,Farm Vehicles and Equipment,farm-vehicleequipment,c9135,1
+9,Flat Share and House Share,flat-share-house-share,c9075,2
+10,Houses and Flats For Rent,houseflatfor-rent,c9078,2
+11,Houses and Flats For Sale,houseflatfor-sale,c9074,2
+12,Holiday Homes,holiday-homes,c9070,2
+13,Land and Plots For Sale,land-plotfor-sale,c9137,2
+14,Car Parks and Storage,car-parkstorage,c9073,2
+15,Commercial Properties,commercial-properties,c9072,2
+16,Short Term,short+term-properties,c9001,2
+17,Other Property,other-properties,c9008,2
+18,Accounting and Finance Jobs,accounting-finance-jobs,c9005,3
+19,Advertising and Marketing Jobs,advertising-marketing-jobs,c9253,3
+20,Arts and Entertainment Jobs,artentertainment-jobs,c9255,3
+21,Au Pair and Babysitting Jobs,au-pair-babysitting-jobs,c9056,3
+22,Admin Jobs,admin-jobs,c9254,3
+23,IT and Tech Jobs,it-tech-jobs,c9050,3
+24,Construction and Trade Jobs,construction-trade-jobs,c9052,3
+25,Customer Service Jobs,customer-service-jobs,c9236,3
+26,Engineering and Architecture Jobs,engineering-architecture-jobs,c9256,3
+27,Agriculture and Farm Jobs,agriculture-farm-jobs,c9083,3
+28,Gardening and Landscaping Jobs,gardening-landscaping-jobs,c9084,3
+29,Beauty Jobs,beauty-jobs,c9543,3
+30,Healthcare and Nursing Jobs,healthcare-nursing-jobs,c9054,3
+31,Housekeeping and Cleaning Jobs,housekeeping-cleaning-jobs,c9085,3
+32,HR Jobs,hr-jobs,c9258,3
+33,Internship Jobs,internship-jobs,c9262,3
+34,Legal Jobs,legal-jobs,c9055,3
+35,Driving and Logistics Jobs,driving-logisticjobs,c9546,3
+36,Manufacturing Jobs,manufacturing-jobs,c9263,3
+37,Part-time and Weekend Jobs,part+time-weekend-jobs,c9058,3
+38,Retail Jobs,retail-jobs,c9059,3
+39,Sales Jobs,salejobs,c9060,3
+40,Security Jobs,security-jobs,c9234,3
+41,Sports and Coaching Jobs,sportcoaching-jobs,c9087,3
+42,Tutors and Teaching Jobs,tutorteaching-jobs,c9061,3
+43,Tourism Jobs,tourism-jobs,c9238,3
+44,General Worker Jobs,general-worker-jobs,c9053,3
+45,Clerical and Data Capturing Jobs,clerical-data-capturing-jobs,c9559,3
+46,Hospitality Jobs,hospitality-jobs,c9560,3
+47,FMCG Jobs,fmcg-jobs,c9561,3
+48,Government and NGO Jobs,government-ngo-jobs,c9562,3
+49,Accounting and Finance CVs,accounting-finance-cvs,c9390,4
+50,Advertising and Marketing CVs,advertising-marketing-cvs,c9391,4
+51,Arts and Entertainment CVs,artentertainment-cvs,c9392,4
+52,Au Pair and Babysitting CVs,childcare-babysitting-cvs,c9394,4
+53,Clerical and Administrative CVs,clerical-administrative-cvs,c9395,4
+54,IT and Tech CVs,computing-it-cvs,c9396,4
+55,Construction and Trade CVs,construction-skilled-trade-cvs,c9397,4
+56,Customer Service CVs,customer-service-cvs,c9398,4
+57,Engineering and Architecture CVs,engineering-architecture-cvs,c9399,4
+58,Agriculture and Farm Jobs CVs,farming-veterinary-cvs,c9400,4
+59,Gardening and Landscaping CVs,gardening-landscaping-cvs,c9401,4
+60,General Worker CVs,general-worker-cvs,c9418,4
+61,Beauty CVs,health-beauty-cvs,c9544,4
+62,Healthcare and Nursing CVs,healthcare-nursing-cvs,c9402,4
+63,Housekeeping and Cleaning CVs,housekeeping-cleaning-cvs,c9404,4
+64,Human Resources CVs,human-resourcecvs,c9405,4
+65,Internship CVs,internship-cvs,c9549,4
+66,Legal Work CVs,legal-work-cvs,c9406,4
+67,Logistics and Transportation CVs,logistictransportation-cvs,c9547,4
+68,Manufacturing CVs,manufacturing-cvs,c9408,4
+69,Hospitality and Restaurant CVs,restaurant-bar-cvs,c9411,4
+70,Retail CVs,retail-cvs,c9412,4
+71,Sales CVs,saletelemarketing-cvs,c9413,4
+72,Security CVs,security-cvs,c9414,4
+73,Sports and Coaching CVs,sportclub-work-cvs,c9415,4
+74,Teaching and Tutoring CVs,teaching-cvs,c9416,4
+75,Travel CVs,travel-tourism-cvs,c9417,4
+76,Weekend and Part-time Jobs CVs,weekend-part+time-jobcvs,c9550,4
+77,FMCG CVs,fmcg-cvs,c9628,4
+78,Government and NGO CVs,government-ngo-cvs,c9629,4
+79,Appliance Repairs,appliance-repairs,c9136,5
+80,Automotive Services,automotive-services,c9131,5
+81,Building and Trades,building-trades,c9063,5
+82,Chauffeur and Airport Transfer,chauffeur-airport-transfer,c9121,5
+83,Child Care,child-care,c9557,5
+84,Cleaning Services,cleaning-services,c9109,5
+85,Courses and Training,coursetraining,c9113,5
+86,DJ and Entertainment Services,dj-entertainment-services,c9269,5
+87,DSTV Services,dstv-services,c9270,5
+88,Electronics and IT Services,electronicit-services,c9064,5
+89,Event Services,event-services,c9265,5
+90,Healer Services,healer-services,c9069,5
+91,Health and Beauty Services,health-beauty-services,c9065,5
+92,Landscaping and Gardening Services,landscaping-gardening-services,c9112,5
+93,Legal Services,legal-services,c9388,5
+94,Manufacturing,manufacturing,c9542,5
+95,Party and Catering,party-catering,c9114,5
+96,Pet Services,pet-services,c9139,5
+97,Photography and Video Services,photography-video-services,c9115,5
+98,Real Estate Services,real-estate-services,c9223,5
+99,Recruitment Services,recruitment-services,c9116,5
+100,Removals and Storage,removalstorage,c9117,5
+101,Sports and Fitness Training,sportfitnestraining,c9111,5
+102,Tax and Financial Services,tax-financial-services,c9118,5
+103,Tutors and Education Services,tutoreducation-services,c9545,5
+104,Travel Agents and Tours,travel-agenttours,c9119,5
+105,Wedding Venues and Wedding Services,wedding-venuewedding-services,c9120,5
+106,Other services,other-services,c9066,5
+107,Generators and Solar Power,generatorsolar-power,c9751,6
+108,Lighting and Lamps,lighting-lamps,c9290,6
+109,Home Improvement,home-improvement-renovations,c9306,6
+110,Antiques and Collectables,antiquecollectables,c9180,6
+111,Furniture,furniture,c9181,6
+112,Garden and Braai,garden-braai,c9182,6
+113,Home Decor,home-decor-interiors,c9183,6
+114,Home Appliances,home-appliances,c9184,6
+115,Hand Tools and Power Tools,diy-tools,c9185,6
+116,Other Home and Garden,other,c9228,6
+117,Wearable Technology,wearable-technology,c9768,7
+118,Drones and Gadgets,dronegadgets,c9774,7
+119,Solar Powered Electronics,solar-powered-electronics,c9785,7
+120,"Printers Scanners and Ink",printerscannerink,c9479,7
+121,Cell Phones and Accessories,cell-phoneaccessories,c9198,7
+122,Computers and Laptops,computerlaptops,c9199,7
+123,"Cameras Video Cameras and Photography",cameravideo-cameraphotography,c9200,7
+124,Gaming and Consoles,gaming-consoles,c9201,7
+125,"TVs Displays and DVD's",tvdisplaydvd-s,c9202,7
+126,Audio and Sound Equipment,audio-sound-equipment,c9203,7
+127,Other Electronics,other-electronics,c9227,7
+128,Baby and Kids Clothing,kidclothing,c9186,8
+129,Kids Furniture and Nursery,kidbaby-furniture,c9187,8
+130,Car Seats and Travel,car-seattravel,c9188,8
+131,Prams and Strollers,pramstrollers,c9189,8
+132,Baby Proofing and Home Safety,baby-proofing,c9190,8
+133,Maternity and Pregnancy,maternity-pregnancy,c9191,8
+134,Nursery,nursery,c9380,8
+135,Baby and Kids Toys,toys,c9192,8
+136,Baby Activity Centres and Walkers,baby-activity-centres,c9640,8
+137,Baby Baths and Potties,baby-baths,c9641,8
+138,Other,other-itemfor-babiekids,c9230,8
+139,Feeding and Accessories,baby-feeding-products,c9385,8
+140,Boats and Jet Skis,boatjet-skis,c9102,9
+141,Yachts and Sailboats,yachtsailboats,c9103,9
+142,Kayaks and Paddle Boats,kayakpaddle-boats,c9220,9
+143,Boat Parts and Accessories,boat-partaccessories,c9104,9
+144,Other Watercraft,other-watercraft,c9105,9
+145,Businesses For Sale,businessefor-sale,c9172,10
+146,Office Equipment and Furniture,office-equipment-furniture,c9173,10
+147,Store and Catering Equipment,store-catering-equipment,c9174,10
+148,Industrial Machinery,industrial-machinery,c9221,10
+149,Other,other-business+to+businesitemfor-sale,c9231,10
+150,Clothing,clothing,c9193,11
+151,Shoes,shoes,c9194,11
+152,Accessories,accessories,c9195,11
+153,Wedding Wear,wedding-wear,c9196,11
+154,Jewellery and Watches,jewellery-watches,c9197,11
+155,Other,other-fashion-items,c9229,11
+156,Birds,birds,c9222,12
+157,Dogs and Puppies,dogpuppies,c9123,12
+158,Cats and Kittens,catkittens,c9124,12
+159,Fish,fish,c9224,12
+160,Horses and Ponies,horseponies,c9141,12
+161,Livestock and Poultry,livestock-poultry,c9140,12
+162,Reptiles,reptiles,c9225,12
+163,Other Pets,other-pets,c9125,12
+164,Pet Accessories,pet-accessories,c9226,12
+165,Camping Gear,camping-gear,c9235,13
+166,Bicycles and Cycling,bicyclecycling,c9558,13
+167,Sports and Fitness Gear,sportfitnesgear,c9204,13
+168,Books and Games,bookgames,c9205,13
+169,Musical Instruments,musical-instruments,c9206,13
+170,CD and DVD,cd-dvd,c9207,13
+171,Tickets,tickets,c9208,13
+172,Other,other-sportleisure-items,c9232,13
+173,Activities and Hobbies,activitiehobbies,c9030,15
+174,Classes and Adult Education,classeadult-education,c9031,15
+175,Lost and Found,lost-found,c9032,15
+176,Musicians and Artists,musicianartists,c9033,15
+177,Carpool and Rideshare,carpool-rideshare,c9035,15
+178,Language Courses and Training,language-coursetraining,c9036,15
+179,Sports and Sports Partners,sportsportpartners,c9037,15
+180,Travel Partners and Companions,travel-partnercompanions,c9038,15
+181,Missed Connections,missed-connectionwith-people,c9130,15
+182,Other,other-community-posts,c9039,15
+183,"Events Gigs and Nightlife",eventgignightlife,c9068,16
+184,Flea Market and Jumble Sale,flea-market-jumble-sale,c9170,16
+185,Other,other-events,c9233,16
+186,Online Classes and Tutoring,online-classetutoring,c9659,17
+187,Online Fitness,online-fitness,c9660,17
+188,Doctor on Demand,doctor-on-demand,c9661,17
+189,Online Spiritual Counseling,online-spiritual-counseling,c9662,17
+190,Courier Services and Deliveries,courier-servicedeliveries,c9663,17
+191,Essential Home Maintenance,essential-home-maintenance,c9664,17
+192,Pest Control,pest-control,c9667,17
+193,Laundry Services,laundry-services,c9669,17
+194,Security Services,security-services,c9670,17
+195,Other Essential Services,other-essential-services,c9671,17
